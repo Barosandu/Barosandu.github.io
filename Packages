@@ -1,1 +1,16 @@
+Package: com.barosandu.scr33nshot
+Name: Scr33nshot
+Version: 01.0
+Architecture: iphoneos-arm 
+Description: MY TEST
+Maintainer: Andu
+Author: Andu
+Section: Themes
+Depends: 
+Filename: debs/Scr33nshot.deb
+Size: 95000
+MD5sum: d87d8140ec4af13a81397d79b914a94a
+SHA1: 0b9c4a370d1d43ea8c02f2524947a2fbac7a8cd8
+SHA256: 8db3885c2f61e66a759d9e4bc355364fdc4fcd42cded4e94d3f34fa42aaca5d8
+
  
