@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <style>
@@ -6,24 +7,48 @@
                 color: white;
             }
             body .center {
+                margin-top: 10px;
+                margin-bottom: 10vw;
                 text-align: center;
             }
-            body .divhorizontal {
-                display: inline-flex;
+            
+            body .imcenter {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 0;
+                margin-top: 10vw;
             }
-            body .lihorizontal {
-                flex: auto;
+            div#menu li {
                 display: inline;
             }
+            div#menu {
+                width: 100vw;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            
+            a.button:hover {
+                background-color: white;
+                padding: 1px;
+                color: black;
+            }
+            a.button {
+                text-decoration: none;
+                padding: 1px;
+                color: white;
+            }
         </style>
+        <title>Welcome to Scrivs</title>
     </head>
     <body>
+        <img class="imcenter" src="scrivs.png" width="100" height="100"/>
         <h1 class="center">Welcome to Scrivus!</h1>
-        <div class="divhorizontal">
-            <ul>
-                <li class="lihorizontal"><p>Privacy Policy</p></li>
-                <li class="lihorizontal"><p>Support</p></li>
-            </ul>
+        <div id="menu">
+            <li><div class="button"><a class="button" href="privacypolicy.html">Privacy Policy</a></div></li>
+            <li><div class="button"><a class="button" href="support.html">Support</a></div></li>
         </div>
+        
     </body>
 </html>
