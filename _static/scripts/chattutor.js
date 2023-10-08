@@ -711,8 +711,14 @@ function setupEmbedMode() {
   // Setup minimize and expand buttons to toggle 'minimized' class on mainArea
   const minimize = get('.msger-minimize');
   const expand = get('.msger-expand');
-  minimize.addEventListener('click', () => mainArea.classList.toggle('minimized'));
-  expand.addEventListener('click', () => mainArea.classList.toggle('minimized'));
+  minimize.addEventListener('click', () => {
+      mainArea.classList.toggle('minimized')
+      expand.classList.toggle('minimized')
+  });
+  expand.addEventListener('click', () => {
+      mainArea.classList.toggle('minimized')
+      expand.classList.toggle('minimized')
+  });
 
   // Extract and store the name of the original file from the 'Download source file' link
   const download_original = document.querySelectorAll('[title="Download source file"]')[0];

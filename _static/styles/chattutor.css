@@ -463,6 +463,13 @@
   display: none !important;
 }
 
+
+.minimized {
+  display: none !important;
+}
+
+
+
 .msger {
   position: fixed;
   bottom: 20px;
