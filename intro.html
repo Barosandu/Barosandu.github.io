@@ -1,0 +1,564 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet"/>
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet"/>
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" rel="stylesheet" type="text/css"/>
+<link href="_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-thebe.css" rel="stylesheet" type="text/css"/>
+<link href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" rel="preload"/>
+<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" rel="preload"/>
+<script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="_static/doctools.js"></script>
+<script src="_static/clipboard.min.js"></script>
+<script src="_static/copybutton.js"></script>
+<script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="_static/togglebutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script src="_static/design-tabs.js"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+<script async="async" src="_static/sphinx-thebe.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="BASICS-quantum-optics-basics.html" rel="next" title="BASICS – Quantum Optics"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+<link href="_static/styles/chattutor.css" rel="stylesheet" type="text/css"/></head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="#">
+<img alt="Logo image" class="logo__image only-light" src="_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="_static/logo-ibm.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+<ul class="nav bd-sidenav bd-sidenav__home-link">
+<li class="toctree-l1 current active">
+<a class="reference internal" href="#">
+                    6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+                </a>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="BASICS-quantum-optics-basics.html">BASICS – Quantum Optics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E1 -- Interference, Entanglement, Quantum-Enhanced Sensing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-EXTRAS--rigorous-solution-MZI.html">EXTRAS – Rigorous Solution of Mach-Zender Interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-EXTRAS-interference-2-homodyne-detection.html">EXTRAS – Homodyne Detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T2E1 -- Quantum Information and Quantum Key Distribution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-HBT.html">TEXT - Introduction to single photons with the quED (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-HBT.html">LAB – Hanbury Brown - Twiss Lab (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-QKD.html">TEXT – QKD (Week 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-BB84.html">LAB – QKD (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E3 -- Solid State Spins</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">TRAINING - Interfacing with the Vector Network Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">TEXT: Introduction to NV centers in diamond and cavity-based magnetometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html">LAB - Quantum Sensing with Solid State Spins (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html">LAB – Quantum Sensing With Solid State Spins (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T1E2 -- Quantum Computing w/ IBM Qiskit (OPTIONAL)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T1E2-LAB-IBM-Qiskit-Prelab.html">PRELAB –Intro to IBM Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T1E2-LAB-IBM-Qiskit.html">LAB – Quantum Computing w/ Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T1E2-LAB-IBM-Qiskit-Solutions.html">SOLUTIONS – Quantum Computing with Qiskit</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="FINAL-PROJECTS.html">Final Design Project</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="OTHER-quantum-monte-carlo-simulation-spin-entanglement-repeaters.html">Entanglement Distribution by Quantum Repeaters: Exploration by Quantum Monte Carlo Simulation</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
+</label></div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<div class="dropdown dropdown-source-buttons">
+<button aria-expanded="false" aria-label="Source repositories" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fab fa-github"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-source-repository-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab" target="_blank" title="Source repository">
+<span class="btn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+<li><a class="btn btn-sm btn-source-issues-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2Fintro.html&amp;body=Your%20issue%20content%20here." target="_blank" title="Open an issue">
+<span class="btn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-download-buttons">
+<button aria-expanded="false" aria-label="Download this page" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-download"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-download-source-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="_sources/intro.md" target="_blank" title="Download source file">
+<span class="btn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+<li>
+<button class="btn btn-sm btn-download-pdf-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
+<span class="btn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+<button class="btn btn-sm btn-fullscreen-button" data-bs-placement="bottom" data-bs-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="btn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6.2410 – Laboratory in Quantum Systems Engineering: <em>Quantum Engineering Platforms</em></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructors">Instructors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teaching-assistants">Teaching Assistants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catalog-information">Catalog Information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-materials">Course Materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-ended-design-project">Open-Ended Design Project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">Schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-lab-table">Course Lab Table</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#course-website-table-of-contents">Course Website Table of Contents</a><ul class="visible nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section class="tex2jax_ignore mathjax_ignore" id="laboratory-in-quantum-systems-engineering-quantum-engineering-platforms">
+<h1>6.2410 – Laboratory in Quantum Systems Engineering: <em>Quantum Engineering Platforms</em><a class="headerlink" href="#laboratory-in-quantum-systems-engineering-quantum-engineering-platforms" title="Permalink to this heading">#</a></h1>
+<p>This is the course website for the Spring 2023 offering of 6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms</p>
+<section id="instructors">
+<h2>Instructors<a class="headerlink" href="#instructors" title="Permalink to this heading">#</a></h2>
+<p>Dirk R. Englund <br/>
+Associate Professor of Electrical Engineering <br/>
+<a class="reference external" href="mailto:englund%40mit.edu">englund<span>@</span>mit<span>.</span>edu</a>, office 36-525</p>
+<p>Phillip D. Keathley <br/>
+Principal Research Scientist, Research Laboratory of Electronics <br/>
+<a class="reference external" href="mailto:pdkeat2%40mit.edu">pdkeat2<span>@</span>mit<span>.</span>edu</a>, office 36-285</p>
+</section>
+<section id="teaching-assistants">
+<h2>Teaching Assistants<a class="headerlink" href="#teaching-assistants" title="Permalink to this heading">#</a></h2>
+<p>Jane Heyes <br/>
+<a class="reference external" href="mailto:jeheyes%40mit.edu">jeheyes<span>@</span>mit<span>.</span>edu</a>, office 36-493</p>
+<p>Kevin C. Chen <br/>
+<a class="reference external" href="mailto:kcchen%40mit.edu">kcchen<span>@</span>mit<span>.</span>edu</a>, office 36-531</p>
+</section>
+<section id="catalog-information">
+<h2>Catalog Information<a class="headerlink" href="#catalog-information" title="Permalink to this heading">#</a></h2>
+<p><strong>Description:</strong> Design and implementation of quantum information science and engineering, with a focus on technology areas (T1) quantum computing, (T2) quantum communications, and (T3) quantum sensing and quantum metrology. This laboratory-centric course focuses on the following quantum engineering platforms: (E1) quantum optics with an emphasis on entangled optical photons for enhanced sensing and communication; (E2) quantum computing with an emphasis on superconducting qubits via IBM Qiskit; and (E3) and solid state spin systems with a focus on quantum sensing and magnetometry.</p>
+<p><strong>Prereqs:</strong> 6.2400, 6.6400, 18.435, or (8.04 and 8.05)</p>
+<p><strong>Units:</strong> 1-5-6</p>
+<p><strong>Laboratory Location:</strong> 38-633</p>
+<p><strong>Laboratory Meeting Times:</strong></p>
+<ul class="simple">
+<li><p>Section 01: MW 10-12</p></li>
+<li><p>Section 02: TR 1-3</p></li>
+</ul>
+<p><strong>Office hours:</strong> TBA</p>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>This course covers an introduction to experimental methods and systems engineering in quantum information science and engineering, with a focus on technology areas of (T1) quantum computing, (T2) quantum communications, and (T3) quantum sensing and quantum metrology.  These technology areas will be explored through both simulation and experimental platforms that are introduced in prepared laboratory exercises.  The prepared laboratory exercises will be broken into three platforms with four modules: (E1) quantum optics which consists of two modules that cover entanglement, single-photon interference, quantum key distribution, and quantum-enhanced sensing; (E2) quantum computing module with IBM Qiskit; and (E3) solid-state spin systems module with a focus on quantum sensing and magnetometry.</p>
+<p>The first 7 weeks of the semester will include an introduction to the laboratory and equipment, basic training, and prepared laboratory exercises with each of the experimental modules.  A rotating system will be used such that each group spends 4 laboratory periods (2 per week, 2 hours each) at each module before rotating to the next.</p>
+<p>The prepared laboratory exercises will be completed in groups.  The general structure of each lab will include: recorded lecture videos (approximately 1-2 hours) and lecture notes that include pre-lab questions that are to be submitted for grading; implementation of experiments in the laboratory with individual lab notebook check-ins; and the writing of summaries and reports (approximately 6 hours).</p>
+<p>The prepared laboratory exercises will be followed by a 2-week period with individual work on the quantum computing Qiskit module.  During this time, students will also prepare group proposals for their team’s open-ended design lab project.  This proposal development period will include conversations with instructors and TAs (during scheduled course/laboratory time) who will provide advice and eventual approval of each team’s final project plan.  After proposal plans are developed, teams will present their plans.</p>
+<p>The course will conclude with a 3-4 week open-ended design project based on each group’s proposal.  This will conclude with a final report and presentation.</p>
+</section>
+<section id="course-materials">
+<h2>Course Materials<a class="headerlink" href="#course-materials" title="Permalink to this heading">#</a></h2>
+<p>The course will provide an online textbook (this website) with interactive lecture notes and videos.  These lecture notes will provide suggested reading and references for further reading where relevant.</p>
+</section>
+<section id="grading">
+<h2>Grading<a class="headerlink" href="#grading" title="Permalink to this heading">#</a></h2>
+<p>Assessment will rely on participation and practice as well as pre-lab exercises or quizzes, as well as laboratory reports.</p>
+<p>The grading will be based on:</p>
+<ul class="simple">
+<li><p>4 Written Summaries (~2-3 pages each)  — 15%</p></li>
+<li><p>Lab notebook – 10%</p></li>
+<li><p>Lab Performance and Attendance – 10%</p></li>
+<li><p>Pre-lab questions – 10%</p></li>
+<li><p>Open-ended design lab proposal and presentation – 15%</p></li>
+<li><p>Open-ended design laboratory (final report and presentation) – 40%</p></li>
+</ul>
+</section>
+<section id="open-ended-design-project">
+<h2>Open-Ended Design Project<a class="headerlink" href="#open-ended-design-project" title="Permalink to this heading">#</a></h2>
+<p>Students will select open-ended design projects following on core material covered in the technology areas (T) and experimental platforms (E). Students will be able to pursue projects that focus in varying degrees on design, construction, and testing of software or hardware, emphasizing different concentrations from 6.1, 6.2, and 6.3. The projects will include a final research report and presentation.  Note that there is a two-week proposal period that is essential for the development of a successful project plan.  These plans will incorporate feedback from course instructors and TAs, and will have to be approved by instructors and TAs.  Project effort begins as soon as a proposal plan is approved.</p>
+</section>
+<section id="schedule">
+<h2>Schedule<a class="headerlink" href="#schedule" title="Permalink to this heading">#</a></h2>
+<table class="table" id="tbl-course-schedule">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Course Schedule</span><a class="headerlink" href="#tbl-course-schedule" title="Permalink to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Week</p></th>
+<th class="head"><p>Topics</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Introduction to “quantum engineering” laboratory. Overview of course &amp; platforms. Basic training on components of each module.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2-3</p></td>
+<td><p>Round 1 Experiment Labs in groups of 3-4; lab report</p></td>
+</tr>
+<tr class="row-even"><td><p>4-5</p></td>
+<td><p>Round 2 Experiment Labs in groups of 3-4; lab report</p></td>
+</tr>
+<tr class="row-odd"><td><p>6-7</p></td>
+<td><p>Round 3 Experiment Labs in groups of 3-4; lab report</p></td>
+</tr>
+<tr class="row-even"><td><p>8-9</p></td>
+<td><p>Individual Qiskit Labs + Open-ended design project proposal + presentation</p></td>
+</tr>
+<tr class="row-odd"><td><p>10-14</p></td>
+<td><p>Open-ended design projects leading to final report and presentation</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="course-lab-table">
+<h2>Course Lab Table<a class="headerlink" href="#course-lab-table" title="Permalink to this heading">#</a></h2>
+<iframe height="1000px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSqJpPOr5ky9dKWrHegL8xTKbTB703PomWJG05xopQQCgKLfsLCNGbhU3hAINlEuvLNK8T3SCilqLaK/pubhtml?gid=500397444&amp;single=true&amp;widget=true&amp;headers=false" width="800px"></iframe>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="course-website-table-of-contents">
+<h1>Course Website Table of Contents<a class="headerlink" href="#course-website-table-of-contents" title="Permalink to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="BASICS-quantum-optics-basics.html">BASICS – Quantum Optics</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E1 -- Interference, Entanglement, Quantum-Enhanced Sensing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-EXTRAS--rigorous-solution-MZI.html">EXTRAS – Rigorous Solution of Mach-Zender Interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-EXTRAS-interference-2-homodyne-detection.html">EXTRAS – Homodyne Detection</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T2E1 -- Quantum Information and Quantum Key Distribution</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-HBT.html">TEXT - Introduction to single photons with the quED (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-HBT.html">LAB – Hanbury Brown - Twiss Lab (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-QKD.html">TEXT – QKD (Week 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-BB84.html">LAB – QKD (Week 2)</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E3 -- Solid State Spins</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">TRAINING - Interfacing with the Vector Network Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">TEXT: Introduction to NV centers in diamond and cavity-based magnetometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html">LAB - Quantum Sensing with Solid State Spins (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html">LAB – Quantum Sensing With Solid State Spins (Week 2)</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T1E2 -- Quantum Computing w/ IBM Qiskit (OPTIONAL)</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="T1E2-LAB-IBM-Qiskit-Prelab.html">PRELAB –Intro to IBM Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T1E2-LAB-IBM-Qiskit.html">LAB – Quantum Computing w/ Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T1E2-LAB-IBM-Qiskit-Solutions.html">SOLUTIONS – Quantum Computing with Qiskit</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Projects</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="FINAL-PROJECTS.html">Final Design Project</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="OTHER-quantum-monte-carlo-simulation-spin-entanglement-repeaters.html">Entanglement Distribution by Quantum Repeaters: Exploration by Quantum Monte Carlo Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OTHER-quantum-monte-carlo-simulation-spin-entanglement-repeaters.html#generation-of-spin-photon-entangled-pair">Generation of spin-photon entangled pair</a></li>
+</ul>
+</div>
+</section>
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+<script>kernelName = 'python3'</script>
+</article>
+<footer class="prev-next-footer">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="right-next" href="BASICS-quantum-optics-basics.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">BASICS – Quantum Optics</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">6.2410 – Laboratory in Quantum Systems Engineering: <em>Quantum Engineering Platforms</em></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructors">Instructors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teaching-assistants">Teaching Assistants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#catalog-information">Catalog Information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-materials">Course Materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grading">Grading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-ended-design-project">Open-Ended Design Project</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schedule">Schedule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-lab-table">Course Lab Table</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#course-website-table-of-contents">Course Website Table of Contents</a><ul class="visible nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner container">
+<div class="footer-item">
+<p class="component-author">
+By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
+</p>
+</div>
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2022.
+      <br>
+</br></p>
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+<div>
+<div class="msger-expand">
+<div class="msger-header-title">
+<i class="fas fa-comment-alt"></i> ChatTutor
+    </div>
+<div class="msger-header-options">
+<span><i class="fas fa-solid fa-caret-up"></i></span>
+</div>
+</div>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<div class="msger minimized">
+<div class="msg-header-helper">
+<div class="msger-header">
+<div class="msger-header-title">
+<i class="fas fa-comment-alt"></i> ChatTutor
+        </div>
+<div class="button-div" id="themeBtnDiv">
+<button class="theme-button" id="themeBtn">Toggle theme</button>
+<button class="msger-minimize" id="minimizeBtn"><span class="material-symbols-outlined" style="font-size: 15px !important; padding: 0 !important; margin: 0 !important; vertical-align: middle">cancel</span></button>
+</div>
+</div>
+</div>
+<main class="msger-chat">
+<div class="msg left-msg">
+<div class="msg-bgd">
+<div class="msg-bubble">
+<div class="msg-info">
+<div class="msg-info-name">assistant</div>
+</div>
+<div class="msg-text">Hello, what can i do to help you?</div>
+</div>
+</div>
+</div>
+<div class="clear-btn-container" id="clearContId">
+</div>
+<div id="scrollHelper" style="background-color: black;">
+<!-- Helper for keeping scrolling  -->
+</div>
+</main>
+<form class="msger-inputarea">
+<input class="msger-input" id="msgInput" placeholder="Enter your message..." type="text"/>
+<button class="msger-send-btn" id="sendBtn" type="submit">
+<span class="material-symbols-outlined" style="font-size: 15px !important; padding: 0 !important; margin: 0 !important; vertical-align: middle">
+            send
+          </span>
+</button>
+<button class="clear-btn" id="clearBtnId">
+<span class="material-symbols-outlined" style="font-size: 15px !important; padding: 0 !important; margin: 0 !important; vertical-align: middle">
+                delete_forever
+            </span>
+</button>
+<button class="stop-gen-btn" id="stopBtnId">
+<span class="material-symbols-outlined" style="font-size: 15px !important; padding: 0 !important; margin: 0 !important; vertical-align: middle">
+                stop_circle
+            </span>
+</button>
+</form>
+</div>
+</div></main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+<footer class="bd-footer">
+</footer>
+<script src="_static/scripts/chattutor.js"></script></body>
+</html>

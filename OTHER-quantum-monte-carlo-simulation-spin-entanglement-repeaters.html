@@ -1,0 +1,1178 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>Entanglement Distribution by Quantum Repeaters: Exploration by Quantum Monte Carlo Simulation — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet"/>
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet"/>
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" rel="stylesheet" type="text/css"/>
+<link href="_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-thebe.css" rel="stylesheet" type="text/css"/>
+<link href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" rel="preload"/>
+<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" rel="preload"/>
+<script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="_static/doctools.js"></script>
+<script src="_static/clipboard.min.js"></script>
+<script src="_static/copybutton.js"></script>
+<script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="_static/togglebutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script src="_static/design-tabs.js"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+<script async="async" src="_static/sphinx-thebe.js"></script>
+<script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'OTHER-quantum-monte-carlo-simulation-spin-entanglement-repeaters';</script>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="FINAL-PROJECTS.html" rel="prev" title="Final Design Project"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+<link href="_static/styles/chattutor.css" rel="stylesheet" type="text/css"/></head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="intro.html">
+<img alt="Logo image" class="logo__image only-light" src="_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="_static/logo-ibm.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+<ul class="nav bd-sidenav bd-sidenav__home-link">
+<li class="toctree-l1">
+<a class="reference internal" href="intro.html">
+                    6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+                </a>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="BASICS-quantum-optics-basics.html">BASICS – Quantum Optics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E1 -- Interference, Entanglement, Quantum-Enhanced Sensing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-EXTRAS--rigorous-solution-MZI.html">EXTRAS – Rigorous Solution of Mach-Zender Interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-EXTRAS-interference-2-homodyne-detection.html">EXTRAS – Homodyne Detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T2E1 -- Quantum Information and Quantum Key Distribution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-HBT.html">TEXT - Introduction to single photons with the quED (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-HBT.html">LAB – Hanbury Brown - Twiss Lab (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-QKD.html">TEXT – QKD (Week 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-BB84.html">LAB – QKD (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E3 -- Solid State Spins</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">TRAINING - Interfacing with the Vector Network Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">TEXT: Introduction to NV centers in diamond and cavity-based magnetometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html">LAB - Quantum Sensing with Solid State Spins (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html">LAB – Quantum Sensing With Solid State Spins (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T1E2 -- Quantum Computing w/ IBM Qiskit (OPTIONAL)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T1E2-LAB-IBM-Qiskit-Prelab.html">PRELAB –Intro to IBM Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T1E2-LAB-IBM-Qiskit.html">LAB – Quantum Computing w/ Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T1E2-LAB-IBM-Qiskit-Solutions.html">SOLUTIONS – Quantum Computing with Qiskit</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="FINAL-PROJECTS.html">Final Design Project</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Entanglement Distribution by Quantum Repeaters: Exploration by Quantum Monte Carlo Simulation</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
+</label></div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<div class="dropdown dropdown-launch-buttons">
+<button aria-expanded="false" aria-label="Launch interactive content" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-rocket"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/OTHER-quantum-monte-carlo-simulation-spin-entanglement-repeaters.ipynb" target="_blank" title="Launch onBinder">
+<span class="btn__icon-container">
+<img src="_static/images/logo_binder.svg"/>
+</span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/OTHER-quantum-monte-carlo-simulation-spin-entanglement-repeaters.ipynb" target="_blank" title="Launch onColab">
+<span class="btn__icon-container">
+<img src="_static/images/logo_colab.png"/>
+</span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-source-buttons">
+<button aria-expanded="false" aria-label="Source repositories" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fab fa-github"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-source-repository-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab" target="_blank" title="Source repository">
+<span class="btn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+<li><a class="btn btn-sm btn-source-issues-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FOTHER-quantum-monte-carlo-simulation-spin-entanglement-repeaters.html&amp;body=Your%20issue%20content%20here." target="_blank" title="Open an issue">
+<span class="btn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-download-buttons">
+<button aria-expanded="false" aria-label="Download this page" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-download"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-download-source-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="_sources/OTHER-quantum-monte-carlo-simulation-spin-entanglement-repeaters.ipynb" target="_blank" title="Download source file">
+<span class="btn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+<li>
+<button class="btn btn-sm btn-download-pdf-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
+<span class="btn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+<button class="btn btn-sm btn-fullscreen-button" data-bs-placement="bottom" data-bs-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="btn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Entanglement Distribution by Quantum Repeaters: Exploration by Quantum Monte Carlo Simulation</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Entanglement Distribution by Quantum Repeaters: Exploration by Quantum Monte Carlo Simulation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mit-6-2140-s2023">MIT 6.2140 | S2023</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-note">Introductory Note</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">Simulation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generation-of-spin-photon-entangled-pair">Generation of spin-photon entangled pair</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section class="tex2jax_ignore mathjax_ignore" id="entanglement-distribution-by-quantum-repeaters-exploration-by-quantum-monte-carlo-simulation">
+<h1>Entanglement Distribution by Quantum Repeaters: Exploration by Quantum Monte Carlo Simulation<a class="headerlink" href="#entanglement-distribution-by-quantum-repeaters-exploration-by-quantum-monte-carlo-simulation" title="Permalink to this heading">#</a></h1>
+<section id="mit-6-2140-s2023">
+<h2>MIT 6.2140 | S2023<a class="headerlink" href="#mit-6-2140-s2023" title="Permalink to this heading">#</a></h2>
+<section id="introductory-note">
+<h3>Introductory Note<a class="headerlink" href="#introductory-note" title="Permalink to this heading">#</a></h3>
+<p>Hi Everyone,</p>
+<p>In 6.2140, we explored quantum communication protocols, such as quantum key distribution, which rely on photonic qubits for secure information exchange. However, as we discovered, the scalability of photon-only schemes is limited due to factors such as loss and noise in optical channels. While there are proposals for photonic error-correcting methods[1–3], they are not yet technologically feasible.
+Memory-based quantum repeaters are devices that enable long-distance quantum communication by extending the of entanglement of stationary qubits beyond what is achievable using direct optical transmission. These devices work by dividing a long-distance channel into shorter segments of quantum memories with optical interfaces, creating entanglement between adjacent segments, and then “swapping” the entanglement to form longer-range connections. Among the leading approaches to quantum repeaters are those based on atomic ensembles, trapped ions, and solid-state qubits. Presently, solid-state qubits have achieved the largest number of entangled nodes, which at this point is still just 3. See here for background[4].</p>
+<p>This is a rapidly evolving field of research, making it impractical to include a physical laboratory module in the course. Nevertheless, quantum repeaters are an essential concept for envisioned quantum networks, such as the “quantum internet” and the scaling of quantum computers through the networking of modular quantum information processors. To provide you with hands-on experience with quantum repeaters, we have developed a simulator based on the Quantum Monte Carlo method, implemented in QuTiP/Python.
+The simulator models entanglement of electron spins in atom-like solid-state emitters, making use of optically heralded photon-photon gates. This interactive tool will allow you to explore the behavior of quantum repeaters and understand their significance in the context of quantum communication networks.</p>
+<p>We encourage you to experiment with the simulator and gain a deeper understanding of quantum repeaters and their potential impact on the future of quantum communication and computation. Feel free to leverage this code for any final projects concerning quantum communication or perhaps quantum computing (for the latter, you could see references here[5–8] on how such entanglement distribution methods could be used for distributed / modular quantum computing).</p>
+<p>Incidentally, I created a bare-bones simulator of a particular approach to quantum computing called cluster-state quantum computing here [9]</p>
+<p>Best regards,
+Dirk</p>
+<p>[1]	M. Pant, H. Krovi, D. Englund, and S. Guha, Rate-Distance Tradeoff and Resource Costs for All-Optical Quantum Repeaters, Phys. Rev. A (2017).</p>
+<p>[2]	K. Azuma, K. Tamaki, and H.-K. Lo, All-Photonic Quantum Repeaters, Nat. Commun. 6, 6787 (2015).</p>
+<p>[3]	G. R. Steinbrecher, J. P. Olson, D. Englund, and J. Carolan, Quantum Optical Neural Networks, Npj Quantum Information 5, 1 (2019).</p>
+<p>[4]	M. Ruf, N. H. Wan, H. Choi, and D. Englund, Quantum Networks Based on Color Centers in Diamond, Journal of Applied (2021).</p>
+<p>[5]	C. Monroe, R. Raussendorf, A. Ruthven, K. R. Brown, P. Maunz, L.-M. Duan, and J. Kim, Large-Scale Modular Quantum-Computer Architecture with Atomic Memory and Photonic Interconnects, Phys. Rev. A 89, 022317 (2014).</p>
+<p>[6]	H. Choi, M. Pant, S. Guha, and D. Englund, Percolation-Based Architecture for Cluster State Creation Using Photon-Mediated Entanglement between Atomic Memories, Npj Quantum Inf. 5, (2019).</p>
+<p>[7]	Y. Li, P. C. Humphreys, G. J. Mendoza, and S. C. Benjamin, Resource Costs for Fault-Tolerant Linear Optical Quantum Computing, Phys. Rev. X 5, 041007 (2015).</p>
+<p>[8]	K. Nemoto, M. Trupke, S. J. Devitt, A. M. Stephens, B. Scharfenberger, K. Buczak, T. Nöbauer, M. S. Everitt, J. Schmiedmayer, and W. J. Munro, Photonic Architecture for Scalable Quantum Information Processing in Diamond, Phys. Rev. X 4, 031022 (2014)</p>
+<p>[9] <a class="reference external" href="https://colab.research.google.com/drive/1cFFPAnHR1VRqbXpMx21s0e6lhbt_4VuK#scrollTo=46rQJduPHFKk&amp;amp;uniqifier=1">https://colab.research.google.com/drive/1cFFPAnHR1VRqbXpMx21s0e6lhbt_4VuK#scrollTo=46rQJduPHFKk&amp;uniqifier=1</a></p>
+</section>
+</section>
+<section id="simulation">
+<h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this heading">#</a></h2>
+<p><em>The following code was creeated by Bo-Han Wu and Dirk Englund.</em></p>
+<p>Before we start, please install the QuTip package.</p>
+<hr class="docutils"/>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qutip
+<span class="kn">from</span> <span class="nn">qutip</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">qutip</span> <span class="k">as</span> <span class="nn">qt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1">#from google.colab import files</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qutip
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached qutip-4.7.3.tar.gz (3.6 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Installing build dependencies ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Getting requirements to build wheel ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Preparing metadata (pyproject.toml) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hCollecting numpy&gt;=1.16.6 (from qutip)
+  Obtaining dependency information for numpy&gt;=1.16.6 from https://files.pythonhosted.org/packages/35/21/9e150d654da358beb29fe216f339dc17f2b2ac13fff2a89669401a910550/numpy-1.26.0-cp311-cp311-macosx_11_0_arm64.whl.metadata
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached numpy-1.26.0-cp311-cp311-macosx_11_0_arm64.whl.metadata (99 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting scipy&gt;=1.0 (from qutip)
+  Obtaining dependency information for scipy&gt;=1.0 from https://files.pythonhosted.org/packages/50/8b/2057417a07a6fee8ed8be40e37bac4a502cae4cf44468a02962bbe81b8af/scipy-1.11.3-cp311-cp311-macosx_12_0_arm64.whl.metadata
+  Using cached scipy-1.11.3-cp311-cp311-macosx_12_0_arm64.whl.metadata (165 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: packaging in ./venv/lib/python3.11/site-packages (from qutip) (23.2)
+Using cached numpy-1.26.0-cp311-cp311-macosx_11_0_arm64.whl (14.0 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using cached scipy-1.11.3-cp311-cp311-macosx_12_0_arm64.whl (29.7 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Building wheels for collected packages: qutip
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for qutip (pyproject.toml) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+?25h canceled
+<span class="-Color -Color-Red">ERROR: Operation cancelled by user</span>
+
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">'pip install qutip'</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">qutip</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">qutip</span> <span class="k">as</span> <span class="nn">qt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named 'qutip'
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="generation-of-spin-photon-entangled-pair">
+<h1>Generation of spin-photon entangled pair<a class="headerlink" href="#generation-of-spin-photon-entangled-pair" title="Permalink to this heading">#</a></h1>
+<p>Based on the spin-photon entanglement result, we would like to develope the protocol to entangle the two spin systems. To start with, let’s prepare two copies of spin-photon systems.</p>
+<p>In a single spin-photon system, we consider the transition diagram of a NV system as shown in the following figure. Initially, we prepare the initial state as the equally suerposition state as:</p>
+<div class="math notranslate nohighlight">
+\[|\psi_0\rangle=\frac{1}{\sqrt{2}}\left(|g_{\downarrow}\rangle+|g_{\uparrow}\rangle\right)\otimes|0\rangle$$ and send the optical field, whose Rabi frequency is $\Omega$ and is resonant to the frequency between the transition $|g_\downarrow\rangle\rightarrow|e_{\downarrow}\rangle$, to the NV system. The interaction Hamiltonian can be written as: $$\hat{H}/\hbar=\Omega\left(\hat{a}\sigma^{\downarrow}_{+}+\hat{a}\sigma^{\uparrow}_{+}e^{i\Delta t}\right)+\text{h.c.}\]</div>
+<p>, where <span class="math notranslate nohighlight">\(\sigma^{\downarrow(\uparrow)}_{+}=|e_{\downarrow(\uparrow)}\rangle\langle g_{\downarrow(\uparrow)}|\)</span>, with the excitation time-dependent Hamiltonian that uses the Semi-classical approximation: $<span class="math notranslate nohighlight">\(\hat{H}_{\text{excited}}\left(t\right)/\hbar=P\left(t\right)\left\{\sigma^{\downarrow}_{+}+\sigma^{\uparrow}_{+}e^{i\Delta t}\right\}+\text{h.c.}\)</span><span class="math notranslate nohighlight">\(
+, where \)</span>P\left(t\right)<span class="math notranslate nohighlight">\( is the Rabi frequency of the excitation pulse. \)</span>\Delta$ is the detunning frequency, illustrated in the figure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uploaded</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<input disabled="" id="files-dc5edfec-f658-4c96-bf57-61ffe607b473" multiple="" name="files[]" style="border:none" type="file"/>
+<output id="result-dc5edfec-f658-4c96-bf57-61ffe607b473">
+      Upload widget is only available when the cell has been executed in the
+      current browser session. Please rerun this cell to enable.
+      </output>
+<script>// Copyright 2017 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * @fileoverview Helpers for google.colab Python module.
+ */
+(function(scope) {
+function span(text, styleAttributes = {}) {
+  const element = document.createElement('span');
+  element.textContent = text;
+  for (const key of Object.keys(styleAttributes)) {
+    element.style[key] = styleAttributes[key];
+  }
+  return element;
+}
+
+// Max number of bytes which will be uploaded at a time.
+const MAX_PAYLOAD_SIZE = 100 * 1024;
+
+function _uploadFiles(inputId, outputId) {
+  const steps = uploadFilesStep(inputId, outputId);
+  const outputElement = document.getElementById(outputId);
+  // Cache steps on the outputElement to make it available for the next call
+  // to uploadFilesContinue from Python.
+  outputElement.steps = steps;
+
+  return _uploadFilesContinue(outputId);
+}
+
+// This is roughly an async generator (not supported in the browser yet),
+// where there are multiple asynchronous steps and the Python side is going
+// to poll for completion of each step.
+// This uses a Promise to block the python side on completion of each step,
+// then passes the result of the previous step as the input to the next step.
+function _uploadFilesContinue(outputId) {
+  const outputElement = document.getElementById(outputId);
+  const steps = outputElement.steps;
+
+  const next = steps.next(outputElement.lastPromiseValue);
+  return Promise.resolve(next.value.promise).then((value) => {
+    // Cache the last promise value to make it available to the next
+    // step of the generator.
+    outputElement.lastPromiseValue = value;
+    return next.value.response;
+  });
+}
+
+/**
+ * Generator function which is called between each async step of the upload
+ * process.
+ * @param {string} inputId Element ID of the input file picker element.
+ * @param {string} outputId Element ID of the output display.
+ * @return {!Iterable<!Object>} Iterable of next steps.
+ */
+function* uploadFilesStep(inputId, outputId) {
+  const inputElement = document.getElementById(inputId);
+  inputElement.disabled = false;
+
+  const outputElement = document.getElementById(outputId);
+  outputElement.innerHTML = '';
+
+  const pickedPromise = new Promise((resolve) => {
+    inputElement.addEventListener('change', (e) => {
+      resolve(e.target.files);
+    });
+  });
+
+  const cancel = document.createElement('button');
+  inputElement.parentElement.appendChild(cancel);
+  cancel.textContent = 'Cancel upload';
+  const cancelPromise = new Promise((resolve) => {
+    cancel.onclick = () => {
+      resolve(null);
+    };
+  });
+
+  // Wait for the user to pick the files.
+  const files = yield {
+    promise: Promise.race([pickedPromise, cancelPromise]),
+    response: {
+      action: 'starting',
+    }
+  };
+
+  cancel.remove();
+
+  // Disable the input element since further picks are not allowed.
+  inputElement.disabled = true;
+
+  if (!files) {
+    return {
+      response: {
+        action: 'complete',
+      }
+    };
+  }
+
+  for (const file of files) {
+    const li = document.createElement('li');
+    li.append(span(file.name, {fontWeight: 'bold'}));
+    li.append(span(
+        `(${file.type || 'n/a'}) - ${file.size} bytes, ` +
+        `last modified: ${
+            file.lastModifiedDate ? file.lastModifiedDate.toLocaleDateString() :
+                                    'n/a'} - `));
+    const percent = span('0% done');
+    li.appendChild(percent);
+
+    outputElement.appendChild(li);
+
+    const fileDataPromise = new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        resolve(e.target.result);
+      };
+      reader.readAsArrayBuffer(file);
+    });
+    // Wait for the data to be ready.
+    let fileData = yield {
+      promise: fileDataPromise,
+      response: {
+        action: 'continue',
+      }
+    };
+
+    // Use a chunked sending to avoid message size limits. See b/62115660.
+    let position = 0;
+    do {
+      const length = Math.min(fileData.byteLength - position, MAX_PAYLOAD_SIZE);
+      const chunk = new Uint8Array(fileData, position, length);
+      position += length;
+
+      const base64 = btoa(String.fromCharCode.apply(null, chunk));
+      yield {
+        response: {
+          action: 'append',
+          file: file.name,
+          data: base64,
+        },
+      };
+
+      let percentDone = fileData.byteLength === 0 ?
+          100 :
+          Math.round((position / fileData.byteLength) * 100);
+      percent.textContent = `${percentDone}% done`;
+
+    } while (position < fileData.byteLength);
+  }
+
+  // All done.
+  yield {
+    response: {
+      action: 'complete',
+    }
+  };
+}
+
+scope.google = scope.google || {};
+scope.google.colab = scope.google.colab || {};
+scope.google.colab._files = {
+  _uploadFiles,
+  _uploadFilesContinue,
+};
+})(self);
+</script> </div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving Spin_Spin_Transition_Diagram.001.jpeg to Spin_Spin_Transition_Diagram.001 (1).jpeg
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">'Spin_Spin_Transition_Diagram.001 (1).jpeg'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/39f1748d03e773ae6f36780ce58cc708ff9db6474106dd33a83a4b99a05ecf72.jpg" src="_images/39f1748d03e773ae6f36780ce58cc708ff9db6474106dd33a83a4b99a05ecf72.jpg">
+</img></div>
+</div>
+<p>Here is the code of system A that generates the entangled spin-photon pair.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Na</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># number of atomic levels</span>
+<span class="n">ground_down</span> <span class="o">=</span> <span class="n">basis</span><span class="p">(</span><span class="n">Na</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">ground_up</span> <span class="o">=</span> <span class="n">basis</span><span class="p">(</span><span class="n">Na</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">excited_down</span> <span class="o">=</span> <span class="n">basis</span><span class="p">(</span><span class="n">Na</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">excited_up</span> <span class="o">=</span> <span class="n">basis</span><span class="p">(</span><span class="n">Na</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># Set where to truncate Fock state for cavity</span>
+<span class="n">sigma_A_gd_ed</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">qeye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">ground_down</span> <span class="o">*</span> <span class="n">excited_down</span><span class="o">.</span><span class="n">dag</span><span class="p">())</span> <span class="c1"># |g_down&gt;&lt;e_down| of mode A</span>
+<span class="n">sigma_A_gu_eu</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">qeye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">ground_up</span> <span class="o">*</span> <span class="n">excited_up</span><span class="o">.</span><span class="n">dag</span><span class="p">())</span> <span class="c1"># |g_up&gt;&lt;e_up| of mode A</span>
+
+<span class="n">a_A</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">destroy</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">qeye</span><span class="p">(</span><span class="n">Na</span><span class="p">))</span> <span class="c1"># annihiliation occurs at mode A</span>
+
+<span class="c1">### Let's define collapse operators</span>
+<span class="n">c_ops</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Build collapse operators</span>
+
+<span class="n">kappa</span> <span class="o">=</span><span class="mi">1</span> <span class="c1"># Cavity decay rate</span>
+<span class="n">c_ops</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">kappa</span><span class="p">)</span> <span class="o">*</span> <span class="n">a_A</span><span class="p">)</span> <span class="c1"># Cavity decay at mode A</span>
+
+<span class="n">gamma</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Atomic decay rate</span>
+<span class="n">c_ops</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma</span><span class="p">)</span> <span class="o">*</span> <span class="n">sigma_A_gd_ed</span><span class="p">)</span> <span class="c1"># sponenteous decay from |e_down&gt; to |g_down&gt;</span>
+<span class="n">c_ops</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma</span><span class="p">)</span> <span class="o">*</span> <span class="n">sigma_A_gu_eu</span><span class="p">)</span> <span class="c1"># sponenteous decay from |e_up&gt; to |g_up&gt;</span>
+
+
+<span class="c1"># e_ops=[a_A.dag()*a_A, sigma_A_gd_ed*sigma_A_gd_ed.dag(), sigma_A_gd_ed.dag()*sigma_A_gd_ed, sigma_A_gu_eu*sigma_A_gu_eu.dag(), sigma_A_gu_eu.dag()*sigma_A_gu_eu]</span>
+
+<span class="n">time_scale</span><span class="o">=</span><span class="mi">2000</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="n">time_scale</span><span class="p">)</span> <span class="c1"># Define time vector</span>
+<span class="n">psi0</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">ground_down</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">ground_up</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># Define initial state as the superposition state of |g_down&gt; and |g_up&gt;</span>
+
+
+<span class="n">Delta_freq</span><span class="o">=</span><span class="mf">1.4e9</span> <span class="c1"># Frequency difference between |e_down&gt; and |e_up&gt;</span>
+<span class="n">life_time_ed</span><span class="o">=</span><span class="mf">30e-9</span> <span class="c1"># lifetime of |e_down&gt;</span>
+<span class="n">Delta</span><span class="o">=</span><span class="n">Delta_freq</span><span class="o">*</span><span class="n">life_time_ed</span>  <span class="c1">#Detunning normalized to spontaneous decay rate of |e_down&gt;</span>
+<span class="n">Omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># coupling strength (Rabi frequency0)</span>
+<span class="c1"># Here describes the interaction Hamiltonian</span>
+<span class="n">H0</span> <span class="o">=</span> <span class="o">-</span><span class="n">Omega</span> <span class="o">*</span> <span class="p">(</span><span class="n">sigma_A_gd_ed</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">a_A</span><span class="o">+</span><span class="n">a_A</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span><span class="o">*</span> <span class="n">sigma_A_gd_ed</span><span class="p">)</span> <span class="c1"># time-independent Hermitian</span>
+<span class="n">H1_1</span> <span class="o">=</span> <span class="o">-</span><span class="n">Omega</span> <span class="o">*</span> <span class="p">(</span><span class="n">sigma_A_gu_eu</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">a_A</span> <span class="p">)</span><span class="c1"># the time-dependent Hamiltonian that couples |g_up&gt; and |e_up&gt; with detunning \Delta</span>
+<span class="n">H1_2</span> <span class="o">=</span> <span class="o">-</span><span class="n">Omega</span> <span class="o">*</span> <span class="p">(</span> <span class="n">a_A</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span><span class="o">*</span> <span class="n">sigma_A_gu_eu</span><span class="p">)</span><span class="c1"># the time-dependent Hamiltonian that couples |e_up&gt; and |g_up&gt; with detunning \Delta</span>
+
+<span class="c1"># Here describes the excitation Hamiltonian</span>
+<span class="n">H1_3</span> <span class="o">=</span> <span class="p">(</span><span class="n">sigma_A_gd_ed</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">+</span> <span class="n">sigma_A_gd_ed</span><span class="p">)</span> <span class="c1"># time-dependent Hamiltonian after semi-classical approximation for spin down</span>
+<span class="n">H_exc_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">sigma_A_gu_eu</span><span class="o">.</span><span class="n">dag</span><span class="p">())</span> <span class="c1"># time-dependent excitation Hamiltonian that couples |g_up&gt; and |e_up&gt; with zero detunning</span>
+<span class="n">H_exc_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">sigma_A_gu_eu</span><span class="p">)</span> <span class="c1"># the time-dependent excitation Hamiltonian that couples |e_up&gt; and |g_up&gt; with detunning \Delta</span>
+
+
+<span class="n">times</span> <span class="o">=</span> <span class="n">t</span>
+
+<span class="n">numb</span><span class="o">=</span><span class="mi">400</span> <span class="c1"># numbers of trajectories</span>
+<span class="n">ntraj</span><span class="o">=</span><span class="p">[</span><span class="n">numb</span><span class="p">]</span>
+
+<span class="c1"># Excitation pulse parameters</span>
+<span class="n">peak</span> <span class="o">=</span><span class="mi">21</span>
+<span class="n">center</span><span class="o">=</span><span class="mf">0.3</span>
+<span class="n">life_time</span><span class="o">=</span><span class="mf">0.05</span>
+
+<span class="n">excite_pulse</span> <span class="o">=</span> <span class="n">peak</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">t</span><span class="o">-</span><span class="n">center</span><span class="p">)</span> <span class="o">/</span> <span class="n">life_time</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">excite_pulse_nor</span> <span class="o">=</span> <span class="n">excite_pulse</span><span class="o">/</span><span class="n">peak</span>
+
+<span class="n">H_A</span> <span class="o">=</span> <span class="p">[</span><span class="n">H0</span><span class="p">,[</span><span class="n">H1_1</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">Delta</span><span class="o">*</span><span class="n">t</span><span class="p">)],[</span><span class="n">H1_2</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">Delta</span><span class="o">*</span><span class="n">t</span><span class="p">)],[</span><span class="n">H1_3</span><span class="p">,</span> <span class="n">excite_pulse</span><span class="p">],[</span><span class="n">H_exc_1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">Delta</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">excite_pulse</span><span class="p">],[</span><span class="n">H_exc_2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">Delta</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">excite_pulse</span><span class="p">]]</span>
+<span class="n">output_A</span> <span class="o">=</span> <span class="n">mcsolve</span><span class="p">(</span><span class="n">H_A</span><span class="p">,</span> <span class="n">psi0</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="p">[],</span> <span class="n">ntraj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0%. Run time:   4.73s. Est. time left: 00:00:00:42
+20.0%. Run time:   7.29s. Est. time left: 00:00:00:29
+30.0%. Run time:   9.73s. Est. time left: 00:00:00:22
+40.0%. Run time:  12.21s. Est. time left: 00:00:00:18
+50.0%. Run time:  14.68s. Est. time left: 00:00:00:14
+60.0%. Run time:  18.59s. Est. time left: 00:00:00:12
+70.0%. Run time:  21.04s. Est. time left: 00:00:00:09
+80.0%. Run time:  23.52s. Est. time left: 00:00:00:05
+90.0%. Run time:  26.01s. Est. time left: 00:00:00:02
+100.0%. Run time:  29.29s. Est. time left: 00:00:00:00
+Total run time:  29.48s
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is the second copy B.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sigma_B_gd_ed</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">qeye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">ground_down</span> <span class="o">*</span> <span class="n">excited_down</span><span class="o">.</span><span class="n">dag</span><span class="p">())</span> <span class="c1"># |g_down&gt;&lt;e_down| of mode A</span>
+<span class="n">sigma_B_gu_eu</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">qeye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">ground_up</span> <span class="o">*</span> <span class="n">excited_up</span><span class="o">.</span><span class="n">dag</span><span class="p">())</span> <span class="c1"># |g_up&gt;&lt;e_up| of mode A</span>
+
+<span class="n">a_B</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">destroy</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">qeye</span><span class="p">(</span><span class="n">Na</span><span class="p">))</span> <span class="c1"># annihiliation occurs at mode A</span>
+
+<span class="c1">### Let's define collapse operators</span>
+<span class="n">c_ops</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Build collapse operators</span>
+
+<span class="n">kappa</span> <span class="o">=</span><span class="mi">1</span> <span class="c1"># Cavity decay rate</span>
+<span class="n">c_ops</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">kappa</span><span class="p">)</span> <span class="o">*</span> <span class="n">a_B</span><span class="p">)</span> <span class="c1"># Cavity decay at mode A</span>
+
+<span class="n">gamma</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Atomic decay rate</span>
+<span class="n">c_ops</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma</span><span class="p">)</span> <span class="o">*</span> <span class="n">sigma_B_gd_ed</span><span class="p">)</span> <span class="c1"># sponenteous decay from |e_down&gt; to |g_down&gt;</span>
+<span class="n">c_ops</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma</span><span class="p">)</span> <span class="o">*</span> <span class="n">sigma_B_gu_eu</span><span class="p">)</span> <span class="c1"># sponenteous decay from |e_up&gt; to |g_up&gt;</span>
+
+
+<span class="c1"># e_ops=[a_B.dag()*a_B, sigma_B_gd_ed*sigma_B_gd_ed.dag(), sigma_B_gd_ed.dag()*sigma_B_gd_ed, sigma_B_gu_eu*sigma_B_gu_eu.dag(), sigma_B_gu_eu.dag()*sigma_B_gu_eu]</span>
+
+<span class="n">time_scale</span><span class="o">=</span><span class="mi">2000</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="n">time_scale</span><span class="p">)</span> <span class="c1"># Define time vector</span>
+<span class="n">psi0</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">ground_down</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">ground_up</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># Define initial state as the superposition state of |g_down&gt; and |g_up&gt;</span>
+
+<span class="n">Delta_freq</span><span class="o">=</span><span class="mf">1.4e9</span> <span class="c1"># Frequency difference between |e_down&gt; and |e_up&gt;</span>
+<span class="n">life_time_ed</span><span class="o">=</span><span class="mf">30e-9</span> <span class="c1"># lifetime of |e_down&gt;</span>
+<span class="n">Delta</span><span class="o">=</span><span class="n">Delta_freq</span><span class="o">*</span><span class="n">life_time_ed</span>  <span class="c1">#Detunning normalized to spontaneous decay rate of |e_down&gt;</span>
+<span class="n">Omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># coupling strength (Rabi frequency0)</span>
+<span class="c1"># Here describes the interaction Hamiltonian</span>
+<span class="n">H0</span> <span class="o">=</span> <span class="o">-</span><span class="n">Omega</span> <span class="o">*</span> <span class="p">(</span><span class="n">sigma_B_gd_ed</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">a_B</span><span class="o">+</span><span class="n">a_B</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span><span class="o">*</span> <span class="n">sigma_B_gd_ed</span><span class="p">)</span> <span class="c1"># time-independent Hermitian</span>
+<span class="n">H1_1</span> <span class="o">=</span> <span class="o">-</span><span class="n">Omega</span> <span class="o">*</span> <span class="p">(</span><span class="n">sigma_B_gu_eu</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">a_B</span><span class="p">)</span><span class="c1"># the time-dependent Hamiltonian that couples |g_up&gt; and |e_up&gt; with detunning \Delta</span>
+<span class="n">H1_2</span> <span class="o">=</span> <span class="o">-</span><span class="n">Omega</span> <span class="o">*</span> <span class="p">(</span> <span class="n">a_B</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span><span class="o">*</span> <span class="n">sigma_B_gu_eu</span><span class="p">)</span><span class="c1"># the time-dependent Hamiltonian that couples |e_up&gt; and |g_up&gt; with detunning \Delta</span>
+
+<span class="c1"># Here describes the excitation Hamiltonian</span>
+<span class="n">H1_3</span> <span class="o">=</span> <span class="p">(</span><span class="n">sigma_B_gd_ed</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">+</span> <span class="n">sigma_B_gd_ed</span><span class="p">)</span> <span class="c1"># time-dependent Hamiltonian after semi-classical approximation for spin down</span>
+<span class="n">H_exc_1</span> <span class="o">=</span> <span class="p">(</span><span class="n">sigma_B_gu_eu</span><span class="o">.</span><span class="n">dag</span><span class="p">())</span> <span class="c1"># time-dependent excitation Hamiltonian that couples |g_up&gt; and |e_up&gt; with zero detunning</span>
+<span class="n">H_exc_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">sigma_B_gu_eu</span><span class="p">)</span> <span class="c1"># the time-dependent excitation Hamiltonian that couples |e_up&gt; and |g_up&gt; with detunning \Delta</span>
+
+
+<span class="n">times</span> <span class="o">=</span> <span class="n">t</span>
+
+<span class="c1"># Excitation pulse parameters</span>
+<span class="n">peak</span> <span class="o">=</span><span class="mi">21</span>
+<span class="n">center</span><span class="o">=</span><span class="mf">0.3</span>
+<span class="n">life_time</span><span class="o">=</span><span class="mf">0.05</span>
+
+<span class="n">excite_pulse</span> <span class="o">=</span> <span class="n">peak</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">t</span><span class="o">-</span><span class="n">center</span><span class="p">)</span> <span class="o">/</span> <span class="n">life_time</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">excite_pulse_nor</span> <span class="o">=</span> <span class="n">excite_pulse</span><span class="o">/</span><span class="n">peak</span>
+
+<span class="n">H_B</span> <span class="o">=</span> <span class="p">[</span><span class="n">H0</span><span class="p">,[</span><span class="n">H1_1</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">Delta</span><span class="o">*</span><span class="n">t</span><span class="p">)],[</span><span class="n">H1_2</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">Delta</span><span class="o">*</span><span class="n">t</span><span class="p">)],[</span><span class="n">H1_3</span><span class="p">,</span> <span class="n">excite_pulse</span><span class="p">],[</span><span class="n">H_exc_1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">Delta</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">excite_pulse</span><span class="p">],[</span><span class="n">H_exc_2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">Delta</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">excite_pulse</span><span class="p">]]</span>
+<span class="n">output_B</span> <span class="o">=</span> <span class="n">mcsolve</span><span class="p">(</span><span class="n">H_B</span><span class="p">,</span> <span class="n">psi0</span><span class="p">,</span> <span class="n">times</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="p">[],</span> <span class="n">ntraj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0%. Run time:   2.66s. Est. time left: 00:00:00:23
+20.0%. Run time:   7.17s. Est. time left: 00:00:00:28
+30.0%. Run time:  11.86s. Est. time left: 00:00:00:27
+40.0%. Run time:  14.34s. Est. time left: 00:00:00:21
+50.0%. Run time:  16.82s. Est. time left: 00:00:00:16
+60.0%. Run time:  19.83s. Est. time left: 00:00:00:13
+70.0%. Run time:  23.17s. Est. time left: 00:00:00:09
+80.0%. Run time:  25.63s. Est. time left: 00:00:00:06
+90.0%. Run time:  28.15s. Est. time left: 00:00:00:03
+100.0%. Run time:  30.65s. Est. time left: 00:00:00:00
+Total run time:  30.79s
+</pre></div>
+</div>
+</div>
+</div>
+<p>#Generation of spin-spin entangled pair</p>
+<p>Here, let’s do the Bell state measurement to swap the entanglement. The Bell state measurement can be thought of as the projection operator, acted on the two spin systems A and B. In Monte Carlo simulation, we acquire a bunch of states that experience a number of quantum jumps and only count those events that either one of the detectors fire (detector A or B) and discard the rest of events. “Passing the two photon of A and B through a 50/50 beamsplitter” plus “the conditional measurement on either one of the detectors fire” is equivalent to project the overall state onto the Bell states <span class="math notranslate nohighlight">\(|\Psi_\pm\rangle=\left(|1_A\rangle|0_B\rangle\pm|0_A\rangle|1_B\rangle\right)/\sqrt{2}\)</span>. The scheme can be plotted in the following figure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uploaded</span> <span class="o">=</span> <span class="n">files</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<input disabled="" id="files-f9dbab97-1df5-4e9b-95cd-fac9899efa13" multiple="" name="files[]" style="border:none" type="file"/>
+<output id="result-f9dbab97-1df5-4e9b-95cd-fac9899efa13">
+      Upload widget is only available when the cell has been executed in the
+      current browser session. Please rerun this cell to enable.
+      </output>
+<script>// Copyright 2017 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * @fileoverview Helpers for google.colab Python module.
+ */
+(function(scope) {
+function span(text, styleAttributes = {}) {
+  const element = document.createElement('span');
+  element.textContent = text;
+  for (const key of Object.keys(styleAttributes)) {
+    element.style[key] = styleAttributes[key];
+  }
+  return element;
+}
+
+// Max number of bytes which will be uploaded at a time.
+const MAX_PAYLOAD_SIZE = 100 * 1024;
+
+function _uploadFiles(inputId, outputId) {
+  const steps = uploadFilesStep(inputId, outputId);
+  const outputElement = document.getElementById(outputId);
+  // Cache steps on the outputElement to make it available for the next call
+  // to uploadFilesContinue from Python.
+  outputElement.steps = steps;
+
+  return _uploadFilesContinue(outputId);
+}
+
+// This is roughly an async generator (not supported in the browser yet),
+// where there are multiple asynchronous steps and the Python side is going
+// to poll for completion of each step.
+// This uses a Promise to block the python side on completion of each step,
+// then passes the result of the previous step as the input to the next step.
+function _uploadFilesContinue(outputId) {
+  const outputElement = document.getElementById(outputId);
+  const steps = outputElement.steps;
+
+  const next = steps.next(outputElement.lastPromiseValue);
+  return Promise.resolve(next.value.promise).then((value) => {
+    // Cache the last promise value to make it available to the next
+    // step of the generator.
+    outputElement.lastPromiseValue = value;
+    return next.value.response;
+  });
+}
+
+/**
+ * Generator function which is called between each async step of the upload
+ * process.
+ * @param {string} inputId Element ID of the input file picker element.
+ * @param {string} outputId Element ID of the output display.
+ * @return {!Iterable<!Object>} Iterable of next steps.
+ */
+function* uploadFilesStep(inputId, outputId) {
+  const inputElement = document.getElementById(inputId);
+  inputElement.disabled = false;
+
+  const outputElement = document.getElementById(outputId);
+  outputElement.innerHTML = '';
+
+  const pickedPromise = new Promise((resolve) => {
+    inputElement.addEventListener('change', (e) => {
+      resolve(e.target.files);
+    });
+  });
+
+  const cancel = document.createElement('button');
+  inputElement.parentElement.appendChild(cancel);
+  cancel.textContent = 'Cancel upload';
+  const cancelPromise = new Promise((resolve) => {
+    cancel.onclick = () => {
+      resolve(null);
+    };
+  });
+
+  // Wait for the user to pick the files.
+  const files = yield {
+    promise: Promise.race([pickedPromise, cancelPromise]),
+    response: {
+      action: 'starting',
+    }
+  };
+
+  cancel.remove();
+
+  // Disable the input element since further picks are not allowed.
+  inputElement.disabled = true;
+
+  if (!files) {
+    return {
+      response: {
+        action: 'complete',
+      }
+    };
+  }
+
+  for (const file of files) {
+    const li = document.createElement('li');
+    li.append(span(file.name, {fontWeight: 'bold'}));
+    li.append(span(
+        `(${file.type || 'n/a'}) - ${file.size} bytes, ` +
+        `last modified: ${
+            file.lastModifiedDate ? file.lastModifiedDate.toLocaleDateString() :
+                                    'n/a'} - `));
+    const percent = span('0% done');
+    li.appendChild(percent);
+
+    outputElement.appendChild(li);
+
+    const fileDataPromise = new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        resolve(e.target.result);
+      };
+      reader.readAsArrayBuffer(file);
+    });
+    // Wait for the data to be ready.
+    let fileData = yield {
+      promise: fileDataPromise,
+      response: {
+        action: 'continue',
+      }
+    };
+
+    // Use a chunked sending to avoid message size limits. See b/62115660.
+    let position = 0;
+    do {
+      const length = Math.min(fileData.byteLength - position, MAX_PAYLOAD_SIZE);
+      const chunk = new Uint8Array(fileData, position, length);
+      position += length;
+
+      const base64 = btoa(String.fromCharCode.apply(null, chunk));
+      yield {
+        response: {
+          action: 'append',
+          file: file.name,
+          data: base64,
+        },
+      };
+
+      let percentDone = fileData.byteLength === 0 ?
+          100 :
+          Math.round((position / fileData.byteLength) * 100);
+      percent.textContent = `${percentDone}% done`;
+
+    } while (position < fileData.byteLength);
+  }
+
+  // All done.
+  yield {
+    response: {
+      action: 'complete',
+    }
+  };
+}
+
+scope.google = scope.google || {};
+scope.google.colab = scope.google.colab || {};
+scope.google.colab._files = {
+  _uploadFiles,
+  _uploadFilesContinue,
+};
+})(self);
+</script> </div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saving BSM.001.jpeg to BSM.001.jpeg
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">'BSM.001.jpeg'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/73d3105951aee97bf57aaaaec364c5a2daf8042e535140830d9cfa7316d2b31c.jpg" src="_images/73d3105951aee97bf57aaaaec364c5a2daf8042e535140830d9cfa7316d2b31c.jpg">
+</img></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">init</span><span class="o">=</span><span class="p">[</span><span class="n">tensor</span><span class="p">(</span><span class="n">output_A</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">time_scale</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">output_B</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">time_scale</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numb</span><span class="p">)]</span> <span class="c1">#define the initial state of system A and B that are both in stationary states</span>
+
+<span class="c1"># Condition on the measurement of either one of the photo detector fires</span>
+<span class="n">C1</span><span class="o">=</span><span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">qeye</span><span class="p">(</span><span class="n">Na</span><span class="p">),</span><span class="n">basis</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">qeye</span><span class="p">(</span><span class="n">Na</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">qeye</span><span class="p">(</span><span class="n">Na</span><span class="p">),</span><span class="n">basis</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">qeye</span><span class="p">(</span><span class="n">Na</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#basis of |01&gt;+|10&gt;</span>
+<span class="n">C2</span><span class="o">=</span><span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">qeye</span><span class="p">(</span><span class="n">Na</span><span class="p">),</span><span class="n">basis</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">qeye</span><span class="p">(</span><span class="n">Na</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">qeye</span><span class="p">(</span><span class="n">Na</span><span class="p">),</span><span class="n">basis</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="n">qeye</span><span class="p">(</span><span class="n">Na</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#basis of |01&gt;-|10&gt;</span>
+<span class="c1"># We have to consider C1 and C2 at the same time because we cannot differentiate them</span>
+
+<span class="c1"># Discarding the events other than |01&gt;+|10&gt; and |01&gt;-|10&gt; decreases the overall entanglement</span>
+
+<span class="n">measurement_set</span><span class="o">=</span><span class="p">[</span><span class="n">C1</span><span class="p">,</span><span class="n">C2</span><span class="p">]</span>
+
+<span class="c1"># Executing the conditional measurement on all trajectories</span>
+<span class="n">measured_state</span><span class="o">=</span><span class="p">[</span><span class="n">M</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span><span class="o">*</span><span class="n">init</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numb</span><span class="p">)</span> <span class="k">for</span> <span class="n">M</span> <span class="ow">in</span> <span class="n">measurement_set</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Great! Now, let’s take a look at the entanglement entropy. The entanglement is to quantify the entanglement between a bipartite system and can be calculated by the Von-Neuman entropy of the reduced densiy operator <span class="math notranslate nohighlight">\(\hat{\rho}_A=\text{Tr}_B\left[\hat{\rho}_{AB}\right]\)</span> or <span class="math notranslate nohighlight">\(\hat{\rho}_B=\text{Tr}_A\left[\hat{\rho}_{AB}\right]\)</span>. Since that the property of entanglement is the information shared in between A and B and the measurement itself will loss the bonding of the two systems and causing it to be a mixed state. The Von-Neumann entropy calculation of the mixed state quantifies the amount of information that was lost during measurement.</p>
+<p>First of all, let’s take the ensemble average of the overall output states to get the ensemble averaged density operator. Followed by the definition of entanglement entropy, we can calculate the overall entanglement between spin A and B.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi</span><span class="o">=</span><span class="mi">0</span><span class="o">*</span><span class="n">tensor</span><span class="p">(</span><span class="n">ground_down</span> <span class="o">*</span> <span class="n">excited_down</span><span class="o">.</span><span class="n">dag</span><span class="p">(),</span> <span class="n">ground_down</span> <span class="o">*</span> <span class="n">excited_down</span><span class="o">.</span><span class="n">dag</span><span class="p">())</span> <span class="c1"># Construct the density operator with desired rank</span>
+<span class="n">d</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">measured_state</span><span class="p">)</span>
+
+<span class="c1"># this part aims to take the ensemble average of all possible states</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+        <span class="n">psi</span><span class="o">+=</span><span class="n">qt</span><span class="o">.</span><span class="n">ket2dm</span><span class="p">(</span><span class="n">measured_state</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="n">out</span><span class="o">=</span><span class="n">psi</span><span class="o">/</span><span class="n">d</span>
+<span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">trace</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+
+<span class="c1"># Eventually, we calculate the entanglement entropy of the two spin systems</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'The entanglement between two spins after swapping is'</span><span class="p">,(</span><span class="n">entropy_vn</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">ptrace</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="n">entropy_vn</span><span class="p">(</span><span class="n">out</span><span class="o">.</span><span class="n">ptrace</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># entropy_vn(out.ptrace(1),2) and entropy_vn(out.ptrace(2),2) should be identical as the number of trajectories goes to infinity</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The entanglement between two spins after swapping is 0.851180802720258
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+<script>kernelName = 'python3'</script>
+</article>
+<footer class="prev-next-footer">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="FINAL-PROJECTS.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Final Design Project</p>
+</div>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Entanglement Distribution by Quantum Repeaters: Exploration by Quantum Monte Carlo Simulation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mit-6-2140-s2023">MIT 6.2140 | S2023</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introductory-note">Introductory Note</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation">Simulation</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generation-of-spin-photon-entangled-pair">Generation of spin-photon entangled pair</a></li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner container">
+<div class="footer-item">
+<p class="component-author">
+By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
+</p>
+</div>
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+<div>
+<div class="msger-expand">
+<div class="msger-header-title">
+<i class="fas fa-comment-alt"></i> ChatTutor
+    </div>
+<div class="msger-header-options">
+<span><i class="fas fa-solid fa-caret-up"></i></span>
+</div>
+</div>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<div class="msger minimized">
+<div class="msg-header-helper">
+<div class="msger-header">
+<div class="msger-header-title">
+<i class="fas fa-comment-alt"></i> ChatTutor
+        </div>
+<div class="button-div" id="themeBtnDiv">
+<button class="theme-button" id="themeBtn">Toggle theme</button>
+<button class="msger-minimize" id="minimizeBtn"><span class="material-symbols-outlined" style="font-size: 15px !important; padding: 0 !important; margin: 0 !important; vertical-align: middle">cancel</span></button>
+</div>
+</div>
+</div>
+<main class="msger-chat">
+<div class="msg left-msg">
+<div class="msg-bgd">
+<div class="msg-bubble">
+<div class="msg-info">
+<div class="msg-info-name">assistant</div>
+</div>
+<div class="msg-text">Hello, what can i do to help you?</div>
+</div>
+</div>
+</div>
+<div class="clear-btn-container" id="clearContId">
+</div>
+<div id="scrollHelper" style="background-color: black;">
+<!-- Helper for keeping scrolling  -->
+</div>
+</main>
+<form class="msger-inputarea">
+<input class="msger-input" id="msgInput" placeholder="Enter your message..." type="text"/>
+<button class="msger-send-btn" id="sendBtn" type="submit">
+<span class="material-symbols-outlined" style="font-size: 15px !important; padding: 0 !important; margin: 0 !important; vertical-align: middle">
+            send
+          </span>
+</button>
+<button class="clear-btn" id="clearBtnId">
+<span class="material-symbols-outlined" style="font-size: 15px !important; padding: 0 !important; margin: 0 !important; vertical-align: middle">
+                delete_forever
+            </span>
+</button>
+<button class="stop-gen-btn" id="stopBtnId">
+<span class="material-symbols-outlined" style="font-size: 15px !important; padding: 0 !important; margin: 0 !important; vertical-align: middle">
+                stop_circle
+            </span>
+</button>
+</form>
+</div>
+</div></main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+<footer class="bd-footer">
+</footer>
+<script src="_static/scripts/chattutor.js"></script></body>
+</html>

@@ -1,0 +1,1123 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+<title>TEXT - Introduction to single photons with the quED (Week 1) — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet"/>
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet"/>
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css" rel="stylesheet" type="text/css"/>
+<link href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" rel="stylesheet" type="text/css"/>
+<link href="_static/togglebutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css" rel="stylesheet" type="text/css"/>
+<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-thebe.css" rel="stylesheet" type="text/css"/>
+<link href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" rel="preload"/>
+<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" rel="preload"/>
+<script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+<script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+<script src="_static/jquery.js"></script>
+<script src="_static/underscore.js"></script>
+<script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+<script src="_static/doctools.js"></script>
+<script src="_static/clipboard.min.js"></script>
+<script src="_static/copybutton.js"></script>
+<script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="_static/togglebutton.js"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script src="_static/design-tabs.js"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+<script async="async" src="_static/sphinx-thebe.js"></script>
+<script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'T2E1-TEXT-HBT';</script>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="T2E1-LAB-HBT.html" rel="next" title="LAB – Hanbury Brown - Twiss Lab (Week 1)"/>
+<link href="T3E1-EXTRAS-interference-2-homodyne-detection.html" rel="prev" title="EXTRAS – Homodyne Detection"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+<link href="_static/styles/chattutor.css" rel="stylesheet" type="text/css"/></head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<nav class="bd-header navbar navbar-expand-lg bd-navbar">
+</nav>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="intro.html">
+<img alt="Logo image" class="logo__image only-light" src="_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="_static/logo-ibm.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+</a></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links" id="bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+<ul class="nav bd-sidenav bd-sidenav__home-link">
+<li class="toctree-l1">
+<a class="reference internal" href="intro.html">
+                    6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
+                </a>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="BASICS-quantum-optics-basics.html">BASICS – Quantum Optics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E1 -- Interference, Entanglement, Quantum-Enhanced Sensing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html">TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-EXTRAS--rigorous-solution-MZI.html">EXTRAS – Rigorous Solution of Mach-Zender Interferometer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T3E1-EXTRAS-interference-2-homodyne-detection.html">EXTRAS – Homodyne Detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T2E1 -- Quantum Information and Quantum Key Distribution</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">TEXT - Introduction to single photons with the quED (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-HBT.html">LAB – Hanbury Brown - Twiss Lab (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-TEXT-QKD.html">TEXT – QKD (Week 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T2E1-LAB-BB84.html">LAB – QKD (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T3E3 -- Solid State Spins</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-PARKOUR-Quantum-Sensing-with-Solid-State-Spins.html">TRAINING - Interfacing with the Vector Network Analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-TEXT-Quantum-Sensing-with-Solid-State-Spins.html">TEXT: Introduction to NV centers in diamond and cavity-based magnetometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week1-Quantum-Sensing-with-Solid-State-Spins.html">LAB - Quantum Sensing with Solid State Spins (Week 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quNV-Jupyter/T3E3-LAB-Week2-Quantum-Sensing-with-Solid-State-Spins.html">LAB – Quantum Sensing With Solid State Spins (Week 2)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">T1E2 -- Quantum Computing w/ IBM Qiskit (OPTIONAL)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="T1E2-LAB-IBM-Qiskit-Prelab.html">PRELAB –Intro to IBM Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T1E2-LAB-IBM-Qiskit.html">LAB – Quantum Computing w/ Qiskit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="T1E2-LAB-IBM-Qiskit-Solutions.html">SOLUTIONS – Quantum Computing with Qiskit</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Final Projects</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="FINAL-PROJECTS.html">Final Design Project</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Other Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="OTHER-quantum-monte-carlo-simulation-spin-entanglement-repeaters.html">Entanglement Distribution by Quantum Repeaters: Exploration by Quantum Monte Carlo Simulation</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
+</label></div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<div class="dropdown dropdown-launch-buttons">
+<button aria-expanded="false" aria-label="Launch interactive content" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-rocket"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T2E1-TEXT-HBT.ipynb" target="_blank" title="Launch onBinder">
+<span class="btn__icon-container">
+<img src="_static/images/logo_binder.svg"/>
+</span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T2E1-TEXT-HBT.ipynb" target="_blank" title="Launch onColab">
+<span class="btn__icon-container">
+<img src="_static/images/logo_colab.png"/>
+</span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-source-buttons">
+<button aria-expanded="false" aria-label="Source repositories" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fab fa-github"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-source-repository-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab" target="_blank" title="Source repository">
+<span class="btn__icon-container">
+<i class="fab fa-github"></i>
+</span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+<li><a class="btn btn-sm btn-source-issues-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FT2E1-TEXT-HBT.html&amp;body=Your%20issue%20content%20here." target="_blank" title="Open an issue">
+<span class="btn__icon-container">
+<i class="fas fa-lightbulb"></i>
+</span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="dropdown dropdown-download-buttons">
+<button aria-expanded="false" aria-label="Download this page" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-download"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-download-source-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="_sources/T2E1-TEXT-HBT.ipynb" target="_blank" title="Download source file">
+<span class="btn__icon-container">
+<i class="fas fa-file"></i>
+</span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+<li>
+<button class="btn btn-sm btn-download-pdf-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
+<span class="btn__icon-container">
+<i class="fas fa-file-pdf"></i>
+</span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+</ul>
+</div>
+<button class="btn btn-sm btn-fullscreen-button" data-bs-placement="bottom" data-bs-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
+<span class="btn__icon-container">
+<i class="fas fa-expand"></i>
+</span>
+</button>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>TEXT - Introduction to single photons with the quED (Week 1)</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-photon-source-spontaneous-parametric-down-conversion-spdc-a-id-spdc-a">Single photon source: Spontaneous Parametric Down-Conversion (SPDC) <a id="spdc"></a></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-matching-conditions">Phase Matching Conditions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-description">Mathematical Description</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-nonlinear-optics">Classical Nonlinear optics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further reading</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-a-id-apd-a">Detection <a id="apd"></a></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-gtwo-0-a-id-hbt-a">Second order coherence - <span class="math notranslate nohighlight">\(\gtwo\)</span>(0)<a id="hbt"></a></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recall-a-beamsplitter">Recall a beamsplitter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hanbury-brown-twiss-hbt-experiment">Hanbury Brown-Twiss (HBT) Experiment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coincidence-with-a-single-photon">Coincidence with a single photon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-time-coherence">Second order time coherence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heralded-single-photon-source">Heralded single-photon source</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-by-qutip">Simulation by QuTip</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-and-hamiltonian">Operators and Hamiltonian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-state-and-state-evolution">Initial state and state evolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#state-evolution">State evolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#photon-number-statistics">Photon number statistics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-functions">Second-order coherence functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-and-further-reading">Sources and further reading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-lab-questions">Pre-Lab Questions</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article" role="main">
+<section class="tex2jax_ignore mathjax_ignore" id="text-introduction-to-single-photons-with-the-qued-week-1">
+<h1>TEXT - Introduction to single photons with the quED (Week 1)<a class="headerlink" href="#text-introduction-to-single-photons-with-the-qued-week-1" title="Permalink to this heading">#</a></h1>
+<p>In this text, we’re going to go over some of the basics of working with single photons, especially how they relate to the quED experimental setup. We’ll start with a single photon source, which you’ll be using in the lab. Then we’ll talk about how to detect single photons.</p>
+<p>Next, we’re going to treat photons as indicidual particles, and we’ll show how to verify that a source is indeed producing single photons. You’ll reproduce that experiment in the lab.</p>
+<p>Finally, as time allows, we’ll look at single-photon interference.</p>
+<ol class="arabic simple">
+<li><p><span class="xref myst">Source: Spontaneous Parametric Down-Conversion</span></p></li>
+<li><p><span class="xref myst">Detection: Avalanche Photodiode</span></p></li>
+<li><p><span class="xref myst">Hanbury Brown-Twiss &amp; Second order coherence <span class="math notranslate nohighlight">\(g^{(2)}\)</span></span></p>
+<ol class="arabic simple">
+<li><p>classical</p></li>
+<li><p>quantum</p></li>
+</ol>
+</li>
+</ol>
+<section id="single-photon-source-spontaneous-parametric-down-conversion-spdc-a-id-spdc-a">
+<h2>Single photon source: Spontaneous Parametric Down-Conversion (SPDC) <a id="spdc"></a><a class="headerlink" href="#single-photon-source-spontaneous-parametric-down-conversion-spdc-a-id-spdc-a" title="Permalink to this heading">#</a></h2>
+<p>First, let’s take a high level overview of how spontaneous parametric down conversion (SPDC) works. SPDC occurs when a pump photon is converted into 2 photons of less energy. Traditionally, one output photon is called the signal and the other is called the idler.</p>
+<section id="phase-matching-conditions">
+<h3>Phase Matching Conditions<a class="headerlink" href="#phase-matching-conditions" title="Permalink to this heading">#</a></h3>
+<p>One important feature of SPDC is the fact that it always obeys energy conservation: the energy of a pump photon before SPDC occurs is equal to the sum of the signal and idler photons after SPDC occurs.</p>
+<figure class="align-default" id="energyconservation">
+<a class="reference internal image-reference" href="_images/spdc_energyconsevation.png"><img alt="_images/spdc_energyconsevation.png" src="_images/spdc_energyconsevation.png" style="width: 200px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">Image from HC Photonics.</span><a class="headerlink" href="#energyconservation" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Another important feature is that the momentum after SPDC must be the same as the momentum before SPDC to satisfy conservation of momentum.</p>
+<figure class="align-default" id="momentumconservation">
+<a class="reference internal image-reference" href="_images/spdc_momentum.png"><img alt="_images/spdc_momentum.png" src="_images/spdc_momentum.png" style="width: 300px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Image from Couteau’s review paper.</span><a class="headerlink" href="#momentumconservation" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Recall that momentum is a vector, so the magnitude <strong>and</strong> direction need to be maintained. This is why we see that the signal and idler photons in the quED are non-colinear (they travel in different directions): their sum still matches the pump photons.</p>
+<p>Matching the momentum is an a challening part of generating SPDC. As you recall, <span class="math notranslate nohighlight">\(\overrightarrow{k} = \frac{2\pi n}{\lambda}\)</span> where <span class="math notranslate nohighlight">\(n\)</span>, the index of refraction, is a function of <span class="math notranslate nohighlight">\(\lambda\)</span>, the wavelength of the light. Choosing a material that has the appropriate index at the relevant wavelengths is challenging and involves looking at the dispersion relation, shown in figure <a class="reference internal" href="#indexmatching"><span class="std std-numref">Fig. 38</span></a>.</p>
+<figure class="align-default" id="indexmatching">
+<a class="reference internal image-reference" href="_images/spdc_index.png"><img alt="_images/spdc_index.png" src="_images/spdc_index.png" style="width: 300px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Image from HC Photonics</span><a class="headerlink" href="#indexmatching" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Additionally,matching the indices requires using different polarization for the photons, leading to different types of SPDC. Note that the image below shows <em>classical</em> nonlinear optical processes, so you’ll see that in some cases there is an input in the idler mode.</p>
+<figure class="align-default" id="spdctypes">
+<a class="reference internal image-reference" href="_images/spdc_types.png"><img alt="_images/spdc_types.png" src="_images/spdc_types.png" style="width: 300px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Image from HC Photonics</span><a class="headerlink" href="#spdctypes" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Knowing the types of SPDC is important when designing an SPDC source, but it’s also important when <em>using</em> the SPDC source. The quED source is from Type 1 SPDC, as show in figure {numref} <code class="docutils literal notranslate"><span class="pre">quEDSPDCcone</span></code>, an image from the quTools manual for the quED. Look at how the output from the crystal is a series of cones concentric around the pump laser. When collecting the light from the SPDC output, it’s important to make sure that the collection is of matching pairs from the same cone. Practically, the way to achieve that is by maximizing the the coincidence counts and not just the singles.</p>
+<figure class="align-default" id="quedspdccone">
+<a class="reference internal image-reference" href="_images/manual_SPDC.jpg"><img alt="_images/manual_SPDC.jpg" src="_images/manual_SPDC.jpg" style="width: 300px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Image from quED Manual</span><a class="headerlink" href="#quedspdccone" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="mathematical-description">
+<h2>Mathematical Description<a class="headerlink" href="#mathematical-description" title="Permalink to this heading">#</a></h2>
+<p>In terms of the quantum optics, it’s valuable to look at how SPDC can be described mathematically. First, let’s consider the initial state of the system before SPDC occurs. We have a very powerful pump beam, which we express as a coherent state with eigenvalue <span class="math notranslate nohighlight">\(\alpha_p\)</span>. The signal and idler states are both vacuums, which are number states with 0 photons in them. So the initial state is given by</p>
+<div class="math notranslate nohighlight">
+\[|\psi\rangle = |0_s,0_i,\alpha_p\rangle\]</div>
+<p>We obtain the interaction Hamiltonian <span class="math notranslate nohighlight">\(\hat{H}_{si}\)</span> from the expection of the pump laser field $<span class="math notranslate nohighlight">\(| \alpha_p\rangle = \hat{D}(\alpha_p) |0\rangle \)</span><span class="math notranslate nohighlight">\( where the displacement operator \)</span><span class="math notranslate nohighlight">\(\hat{D}(\alpha_p)\)</span><span class="math notranslate nohighlight">\( creates the coherent state in mode p. Let's assume  \)</span><span class="math notranslate nohighlight">\(\alpha_p \in \mathbb{R} \)</span>$ to avoid some math tedium. Then, in the interaction picture,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\hat{H}_{si} &amp;= \langle \alpha_p | \hat{H}_{sip} | \alpha_p \rangle \\
+&amp;= -i \chi_2 (\hat{s} \hat{i} \alpha_p^* - \hat{s}^{\dagger} \hat{i}^{\dagger} \alpha_p) \\
+&amp;= -i \chi_2 \alpha_p (\hat{s}\hat{i} - \hat{s}^{\dagger} \hat{i}^{\dagger}) \\
+&amp;= -i \hbar \frac{\chi}{2} (\hat{s}\hat{i} - \hat{s}^{\dagger} \hat{i}^{\dagger})
+\end{aligned}
+\end{split}\]</div>
+<p>where we define</p>
+<div class="math notranslate nohighlight">
+\[
+\chi \equiv \frac{2 \chi_2 |\alpha_p|}{\hbar}.
+\]</div>
+<p><span class="math notranslate nohighlight">\(\chi_{2}\)</span> is the nonlinearity factor of the crystal and is given in (picometers)(Volts)<span class="math notranslate nohighlight">\(^{-1}\)</span>. This tiny value is why SPDC is such an inefficient process. Even though our pump power is very high (<span class="math notranslate nohighlight">\(\alpha_p &gt;&gt;0\)</span>), we still have only <span class="math notranslate nohighlight">\(~10^6\)</span> photon pairs/second generation rate.</p>
+<p>Here, we explicitly factored out the <span class="math notranslate nohighlight">\(\hbar\)</span> term to simplify the subsequent math since that <span class="math notranslate nohighlight">\(\hbar\)</span> will be canceled by the <span class="math notranslate nohighlight">\(\hbar\)</span> in the denominator of the time dependent Schrodinger equation, <span class="math notranslate nohighlight">\(\frac{\partial}{\partial t} |\psi(t)\rangle = -\frac{i}{\hbar} H |\psi(t)\rangle\)</span>.</p>
+<section id="classical-nonlinear-optics">
+<h3>Classical Nonlinear optics<a class="headerlink" href="#classical-nonlinear-optics" title="Permalink to this heading">#</a></h3>
+<p>Briefly, SPDC is a fundamentally quantum process: it can’t be described by classical nonlinear optics. In classical nonlinear optics, parametric ampification is the process where you combine a source with frequency <span class="math notranslate nohighlight">\(\omega_p\)</span> and another source frequency with <span class="math notranslate nohighlight">\(\omega_i\)</span> in a nonlinear crystal to generate a field at <span class="math notranslate nohighlight">\(\omega_s = \omega_p - \omega_i\)</span> and amplify the field at <span class="math notranslate nohighlight">\(\omega_i\)</span>. This is similar to SPDC in that you’re generating light at a wavelength longer than the pump, but it’s disimilar in that it <em>requires</em> a non-zero input at <span class="math notranslate nohighlight">\(\omega_i\)</span>. This is what makes SPDC spontaneous: the output at the signal and idler aren’t stimulated by any input because the input is in the vacuum state.</p>
+</section>
+<section id="further-reading">
+<h3>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this heading">#</a></h3>
+<p>For a good overview of SPDC with additional details, this <a class="reference external" href="https://doi.org/10.1080/00107514.2018.1488463">Review Article</a> is recommended. Additionally, for more information about designing a system to produce SPDC, the <a class="reference external" href="https://www.hcphotonics.com/ppln-guide-overview">HC Photonics PPLN GUIDE: Overview</a> is very informative. For nonlinear optics, Robert W. Boyd’s <em>Nonlinear Optics</em> is an excellent textbook.</p>
+</section>
+<section id="detection-a-id-apd-a">
+<h3>Detection <a id="apd"></a><a class="headerlink" href="#detection-a-id-apd-a" title="Permalink to this heading">#</a></h3>
+<p>The detectors in this class will mostly be treated as a black box: you put in some photons, you get out a count of the photons. However, if you’ve never worked with photodetectors, it can be helpful to look briefly at how detectors work.</p>
+<p>Briefly, a photodetector uses a photodiode to generate a photocurrent, which can be amplified or measured directly. The high level understanding is that you shine a light on a device, and the light is absorbed and creates a current. Figure {numref} <code class="docutils literal notranslate"><span class="pre">Detector</span></code> below shows a basic cartoon of the process. A photodiode is a semiconductor device based on a crystal structure. In this type of crystal structure, one region has mobile electrons while another has mobile positive charges, called holes. When an incident photon (energy <span class="math notranslate nohighlight">\(h\nu\)</span>) has enough energy to overcome the bandgap energy <span class="math notranslate nohighlight">\(E_g\)</span>, it can excite an electron and a hole enough that an applied voltage will move the charge carriers. This movement of charge generates a photocurrent.</p>
+<figure class="align-default" id="detector">
+<a class="reference internal image-reference" href="_images/detector.jpg"><img alt="_images/detector.jpg" src="_images/detector.jpg" style="width: 600px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 41 </span><span class="caption-text">Image from Saleh and Teich.</span><a class="headerlink" href="#detector" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Our particular device are avalanche photodetectors (APD). What makes them special is that they’re designed so that once an incident photon excites an electron and hole, that electron and hole excite an additional electron and hole, which excites an additional electron an hole. This creates an “avalanche” effect and makes it possible to measure single photons.</p>
+</section>
+</section>
+<section id="second-order-coherence-gtwo-0-a-id-hbt-a">
+<h2>Second order coherence - <span class="math notranslate nohighlight">\(\gtwo\)</span>(0)<a id="hbt"></a><a class="headerlink" href="#second-order-coherence-gtwo-0-a-id-hbt-a" title="Permalink to this heading">#</a></h2>
+<p>Now that you know more about the source and detectors we have available, let’s look at our first experiment to measure the second order coherence, <span class="math notranslate nohighlight">\(\gtwo\)</span>. <span class="math notranslate nohighlight">\(\gtwo\)</span> is an important parameter when describing a light source, giving us information about how close the actual source is to an ideal.</p>
+<p>Let’s first review the mechanics of a beamsplitter, an essential component in this measurement.</p>
+<section id="recall-a-beamsplitter">
+<h3>Recall a beamsplitter<a class="headerlink" href="#recall-a-beamsplitter" title="Permalink to this heading">#</a></h3>
+<p>Consider a lossless 50/50 beamsplitter with indpendent inputs <span class="math notranslate nohighlight">\(\ahat\)</span> and <span class="math notranslate nohighlight">\(\bhat\)</span>. The outputs <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span> are defined as</p>
+<div class="math notranslate nohighlight">
+\[\chat = \frac{1}{\sqrt{2}}\ahat + \frac{1}{\sqrt{2}}\bhat\]</div>
+<div class="math notranslate nohighlight">
+\[\dhat = \frac{1}{\sqrt{2}}\ahat - \frac{1}{\sqrt{2}}\bhat\]</div>
+<figure class="align-default" id="beamsplitter">
+<a class="reference internal image-reference" href="_images/beamsplitter.png"><img alt="_images/beamsplitter.png" src="_images/beamsplitter.png" style="width: 600px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 42 </span><span class="caption-text">A beamsplitter.</span><a class="headerlink" href="#beamsplitter" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The operators of each field <span class="math notranslate nohighlight">\(\ahat\)</span> and <span class="math notranslate nohighlight">\(\bhat\)</span> satisfy the boson commutation relations</p>
+<div class="math notranslate nohighlight">
+\[[\ahat,\adagger] = \ahat\adagger - \adagger\ahat = [\bhat,\bdagger] = 1\]</div>
+<p>and that <span class="math notranslate nohighlight">\(\ahat\)</span> and <span class="math notranslate nohighlight">\(\bhat\)</span> are independent fields, ie</p>
+<div class="math notranslate nohighlight">
+\[[\ahat,\bdagger] = [\bhat,\adagger] = 0\]</div>
+<p>You can verify that the outputs follow the same pattern and that the commutation relations are maintained.</p>
+<div class="math notranslate nohighlight">
+\[[\chat,\cdagger] = [\dhat,\ddagger] = 1\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[[\chat,\ddagger] = [\dhat,\cdagger] = 0\]</div>
+</section>
+<section id="hanbury-brown-twiss-hbt-experiment">
+<h3>Hanbury Brown-Twiss (HBT) Experiment<a class="headerlink" href="#hanbury-brown-twiss-hbt-experiment" title="Permalink to this heading">#</a></h3>
+<p>The Hanbury Brown-Twiss (HBT) experiment was first conducted by astronomers, but it’s now used in quantum optics. The schematic is show below. There’s a 50-50 beamsplitter, and only one input port, <span class="math notranslate nohighlight">\(\ahat\)</span> has light shining in. The other input port, <span class="math notranslate nohighlight">\(\bhat\)</span> is in a vacuum state. The measurement is taken by putting detectors at the output ports <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span> and measuring the singles and coincidences.</p>
+<figure class="align-default" id="hbtschematic">
+<a class="reference internal image-reference" href="_images/HBT_cartoon.png"><img alt="_images/HBT_cartoon.png" src="_images/HBT_cartoon.png" style="width: 600px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Schematic of the HBT setup.</span><a class="headerlink" href="#hbtschematic" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>First, let’s look at the experiment in one particular case, when the input light is in the single photon number state.</p>
+</section>
+<section id="coincidence-with-a-single-photon">
+<h3>Coincidence with a single photon<a class="headerlink" href="#coincidence-with-a-single-photon" title="Permalink to this heading">#</a></h3>
+<p>Specifically, we want to know how often we get a photon at both <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span> simultaneously. We call this a <em>coincidence</em> meaning an event where 2 (or more) detection events occur within a short period of time (on the scale of  a few nanoseconds) on 2 separate detectors. Looking at coincidences is an important measurement in quantum optics.</p>
+<p>What is the coincidence of <span class="math notranslate nohighlight">\(\chat\)</span> and <span class="math notranslate nohighlight">\(\dhat\)</span>?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\langle n_c n_d\rangle &amp;= {}_b\langle0|{}_a\langle1|\hat{n}_c\hat{n}_d|1\rangle_a|0\rangle_b \\
+&amp;= {}_b\langle0|{}_a\langle1|\frac{1}{\sqrt{2}}(\adagger + \bdagger)\frac{1}{\sqrt{2}}(\ahat + \bhat)\frac{1}{\sqrt{2}}(\adagger - \bdagger)\frac{1}{\sqrt{2}}(\ahat - \bhat)|1\rangle_a|0\rangle_b \\
+&amp;= \frac{1}{4}{}_b\langle0|{}_a\langle1|(\adagger\ahat + \adagger\bhat + \bdagger\ahat + \bdagger\bhat)(\adagger\ahat - \adagger\bhat - \bdagger\ahat + \bdagger\bhat)|1\rangle_a|0\rangle_b \\
+&amp;= \frac{1}{4}{}_b\langle0|{}_a\langle1|(\adagger\ahat\adagger\ahat - \adagger\bhat\bdagger\ahat|1\rangle_a|0\rangle_b \\ 
+&amp;= \frac{1}{4}{}_b\langle0|{}_a\langle1|(\hat{n}_a^2 - \hat{n}_a(1 + \hat{n}_b)|1\rangle_a|0\rangle_b \\
+&amp;= \frac{1}{4}{}_a\langle1|\hat{n}_a(\hat{n}_a - 1)|1\rangle_a \\
+&amp;= 0 
+\end{aligned}\end{split}\]</div>
+<p>So we see in the case with a single photon input into a beamsplitter we expect 0 coincidences. Conceptually this makes sense: a single photon can only go through one of 2 paths in the beamsplitter. If we look at both outputs of the beamsplitter at the same time, we should only see a click on one of the outputs.</p>
+<p>The video below works through this math step by step, in case you’d like to see how the operator math can be evaluated.</p>
+<iframe allow="autoplay" height="480" src="https://drive.google.com/file/d/1mwGIT02T_--aJ-tp_Cb0yPVsnxI6hhyQ/preview" width="640"></iframe></section>
+<section id="second-order-time-coherence">
+<h3>Second order time coherence<a class="headerlink" href="#second-order-time-coherence" title="Permalink to this heading">#</a></h3>
+<p>The above exercise is a necessary step for finding the <em>second-order coherence</em>. The most general case assumes the detectors record events at slightly different times, ie the detection time at detector c is <span class="math notranslate nohighlight">\(t_c\)</span> while the detection at detector d is <span class="math notranslate nohighlight">\(t_d\)</span>. This allows us to account for situations where the detectors are slightly different distances away from the beamsplitter.</p>
+<div class="math notranslate nohighlight">
+\[\gtwo(t_c,t_d) = \frac{\langle\hat{n}_c(t_c)\hat{n}_d(t_d)\rangle}{\langle\hat{n}_c(t_c)\rangle\langle\hat{n}_d(t_d)\rangle}\]</div>
+<p>If, as above, <span class="math notranslate nohighlight">\(\bhat\)</span> is in a vacuum state, for and <span class="math notranslate nohighlight">\(t_c = t_d\)</span>, we can simplify to</p>
+<div class="math notranslate nohighlight">
+\[\gtwo(0) = \frac{\langle\hat{n}_a(\hat{n}_a -1)\rangle}{\langle\hat{n}_a\rangle^2}\]</div>
+<p>Clearly, for the case of <span class="math notranslate nohighlight">\(\ahat\)</span> being in the <span class="math notranslate nohighlight">\(|1\rangle\)</span> state, we find <span class="math notranslate nohighlight">\(g^{(2)}(0) = 0 \)</span>.</p>
+</section>
+<section id="heralded-single-photon-source">
+<h3>Heralded single-photon source<a class="headerlink" href="#heralded-single-photon-source" title="Permalink to this heading">#</a></h3>
+<p>The set-up we’ll see in the lab, however, isn’t a case with single photons. SPDC is a <em>heralded</em> single photon source. That means that if an idler photon is generated, it’s extremely likely we’ll measure a corresponding signal photon. Due to issues like multiple pair emissions in the crystal and detector-related issues like dark counts and stray light, it’s not a 100% correlation, but the probability is still very high.</p>
+<p>The result is that the <span class="math notranslate nohighlight">\(\gtwo\)</span> we’re interested in is conditioned on detecting an idler photon in the other arm, as in the image below. That is to say that we only want to look for coincidences between the two signal detectors when there is also a detection event in the idler detector.</p>
+<figure class="align-default" id="heralded-hbt">
+<a class="reference internal image-reference" href="_images/HBT_heralded.png"><img alt="_images/HBT_heralded.png" src="_images/HBT_heralded.png" style="width: 400px;"/></a>
+<figcaption>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Image from quTools.</span><a class="headerlink" href="#heralded-hbt" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The <span class="math notranslate nohighlight">\(\gtwo\)</span> measurement is now conditioned on the idler detection at time <span class="math notranslate nohighlight">\(t_i\)</span>, which we is expressed the following</p>
+<div class="math notranslate nohighlight">
+\[\gtwo(t_c,t_d|t_i) = \frac{\langle\hat{n}_c(t_c)\hat{n}_d(t_d)\rangle_{pm}}{\langle\hat{n}_c(t_c)\rangle_{pm}\langle\hat{n}_d(t_d)\rangle_{pm}}\]</div>
+<p>where the “pm” subscript tells us to wait post-measurement to select which detections to use. The formal math is worked out in <a class="reference external" href="http://dx.doi.org/10.1103/PhysRevA.79.035801">Bocquillon et al, PRA 79 035801 (2009)</a> and <a class="reference external" href="http://stacks.iop.org/JPhysB/42/114013">Razavi et al, JPhysB 42 114013 (2009)</a>, but we’re going to approach this conceptually.</p>
+<p>First, let’s look at the numerator term, <span class="math notranslate nohighlight">\(N = \langle\hat{n}_c(t_c)\hat{n}_d(t_d)\rangle_{pm}\)</span>. Effectively, we’re saying that we’re looking at coincidences at c and d only in the case we make a measurement at i. So, that means we’re looking for three-fold coincidences <span class="math notranslate nohighlight">\(\langle\hat{n}_c\hat{n}_d\hat{n}_i\rangle\)</span>.</p>
+<p>We want to normalize this to what we would expect if we were measuring uncorrelated light. For detector <span class="math notranslate nohighlight">\(j\)</span> where <span class="math notranslate nohighlight">\(j = c, d, i\)</span>, we say that the measured singles, <span class="math notranslate nohighlight">\(N_j\)</span>, over a measurement time <span class="math notranslate nohighlight">\(T\)</span> is equal to the probability of getting a count, <span class="math notranslate nohighlight">\(p_j\)</span>, multiplied by the number of coincidence bins, <span class="math notranslate nohighlight">\(\frac{T}{\Delta_w}\)</span> where <span class="math notranslate nohighlight">\(\Delta_w\)</span> is the coincidence bin width. That is</p>
+<div class="math notranslate nohighlight">
+\[N_j = p_j \cdot \frac{T}{\Delta_w}\]</div>
+<p>Now, for uncorrelated light sources, we expect the probability of three-fold coincidences over time <span class="math notranslate nohighlight">\(T\)</span> to be equal to the product of the probabilities</p>
+<div class="math notranslate nohighlight">
+\[p^a_{icd} = p_i \cdot p_c \cdot p_d = N_c \cdot \frac{\Delta_w}{T} \cdot N_d \cdot \frac{\Delta_w}{T} \cdot N_i \cdot \frac{\Delta_w}{T} = N_c N_d N_i (\frac{\Delta_w}{T})^3\]</div>
+<p>However, our setup makes it easier for us to measure two-fold coincidences. So, let’s consider the probability of a three fold coincidence in the following way:</p>
+<div class="math notranslate nohighlight">
+\[p^a_{icd} = p^a_{ic} \cdot p_d = p^a_{ic} \cdot \frac{p_i}{p_i} \cdot p_d = \frac{p^a_{ic}p^a_{id}}{p_i}\]</div>
+<p>Similarly as above, we’re assuming that the expected number of coincidences <span class="math notranslate nohighlight">\(N_{12}\)</span> over time <span class="math notranslate nohighlight">\(T\)</span> with coincidence window <span class="math notranslate nohighlight">\(\Delta_w\)</span> is given by <span class="math notranslate nohighlight">\(N_{12} = p_{12} \cdot \frac{T}{\Delta_w}\)</span>, which means that</p>
+<div class="math notranslate nohighlight">
+\[ p^a_{icd} = \frac{N_{ic} \frac{\Delta_w}{T} N_{id} \frac{\Delta_w}{T}}{N_i\frac{\Delta_w}{T}}  = \frac{N_{ic}N_{id}}{N_i}\frac{\Delta_w}{T}\]</div>
+<p>Now we have an expression for <span class="math notranslate nohighlight">\(p^a_{icd}\)</span> which gives us the probability of getting a three-fold coincidence during coincidence window <span class="math notranslate nohighlight">\(\Delta_w\)</span>. This expression is in the form of <span class="math notranslate nohighlight">\(\Delta_w\)</span>, total measurement time <span class="math notranslate nohighlight">\(T\)</span>, and the number of two-fold coincidences <span class="math notranslate nohighlight">\(N_{ic}\)</span> and <span class="math notranslate nohighlight">\(N_{id}\)</span> as well as the total number of idler counts in that time, <span class="math notranslate nohighlight">\(N_i\)</span>. Now, to get from the probability to the expected valued, we multiply by the total number of coincidence bins over our measurement time, <span class="math notranslate nohighlight">\(\frac{T}{\Delta_w}\)</span>, which gives us the following:</p>
+<div class="math notranslate nohighlight">
+\[N^a_{icd} = \frac{N_{ic}N_{id}}{N_i}\frac{\Delta_w}{T} \cdot \frac{T}{\Delta_w} = \frac{N_{ic}N_{id}}{N_i}\]</div>
+<p>Now, going back to <span class="math notranslate nohighlight">\(\gtwo\)</span>, we now take the ratio of our measured <span class="math notranslate nohighlight">\(N_{icd}\)</span> compared to what we expect for independet light sources, and we get</p>
+<div class="math notranslate nohighlight">
+\[\gtwo(0) = \frac{N_{icd}N_i}{N_{ic}N_{id}}\]</div>
+<p>The video below is a lecture that nicely walks through how you look at the <span class="math notranslate nohighlight">\(\gtwo(0)\)</span> measurement of a heralded source. The relevant part is about 20 minutes long, and it’s based on straighforward probability and developing physical intuition about the HBT experiment.</p>
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube-nocookie.com/embed/4zsd31E2n4w?start=635" title="YouTube video player" width="560"></iframe></section>
+</section>
+<section id="simulation-by-qutip">
+<h2>Simulation by QuTip<a class="headerlink" href="#simulation-by-qutip" title="Permalink to this heading">#</a></h2>
+<p>We can model the SPDC process and squeezed light via the formalism of the degenerate parametric amplifier. The code below is meant to enrich your understanding of the SPDC process.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>qutip
+
+<span class="kn">from</span> <span class="nn">qutip</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="c1"># install QuTip</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting qutip
+  Using cached qutip-4.7.3.tar.gz (3.6 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Installing build dependencies ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> /
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Getting requirements to build wheel ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25h  Preparing metadata (pyproject.toml) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hCollecting numpy&gt;=1.16.6 (from qutip)
+  Obtaining dependency information for numpy&gt;=1.16.6 from https://files.pythonhosted.org/packages/35/21/9e150d654da358beb29fe216f339dc17f2b2ac13fff2a89669401a910550/numpy-1.26.0-cp311-cp311-macosx_11_0_arm64.whl.metadata
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Using cached numpy-1.26.0-cp311-cp311-macosx_11_0_arm64.whl.metadata (99 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting scipy&gt;=1.0 (from qutip)
+  Obtaining dependency information for scipy&gt;=1.0 from https://files.pythonhosted.org/packages/50/8b/2057417a07a6fee8ed8be40e37bac4a502cae4cf44468a02962bbe81b8af/scipy-1.11.3-cp311-cp311-macosx_12_0_arm64.whl.metadata
+  Using cached scipy-1.11.3-cp311-cp311-macosx_12_0_arm64.whl.metadata (165 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: packaging in ./venv/lib/python3.11/site-packages (from qutip) (23.2)
+Using cached numpy-1.26.0-cp311-cp311-macosx_11_0_arm64.whl (14.0 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using cached scipy-1.11.3-cp311-cp311-macosx_12_0_arm64.whl (29.7 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Building wheels for collected packages: qutip
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for qutip (pyproject.toml) ... ?25l-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> |
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+?25h canceled
+<span class="-Color -Color-Red">ERROR: Operation cancelled by user</span>
+
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">'pip install qutip'</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">qutip</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">'matplotlib'</span><span class="p">,</span> <span class="s1">'inline'</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named 'qutip'
+</pre></div>
+</div>
+</div>
+</div>
+<section id="operators-and-hamiltonian">
+<h3>Operators and Hamiltonian<a class="headerlink" href="#operators-and-hamiltonian" title="Permalink to this heading">#</a></h3>
+<p>In the following code, we set the parameters chi, N1, and N2, which are used to define the system’s operators a, na, b, and nb. These operators represent the annihilation and number operators for two distinct modes of the system.</p>
+<p>The tensor() function is used to create composite operators that act on the joint Hilbert space of the two modes. The destroy() and num() functions create the annihilation and number operators, respectively.</p>
+<p>Recall from above that the interaction Hamiltonian is</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{aligned}
+H_{ab} = -i \hbar \frac{\chi}{2} (a b - a^{\dagger} b^{\dagger})
+\end{aligned}
+\]</div>
+<p>where we define</p>
+<div class="math notranslate nohighlight">
+\[
+\chi \equiv \frac{2 \chi_2 |\alpha_p|}{\hbar}.
+\]</div>
+<p>Here, we explicitly factored out the <span class="math notranslate nohighlight">\(\hbar\)</span> term to simplify the subsequent math since that <span class="math notranslate nohighlight">\(\hbar\)</span> will be canceled by the <span class="math notranslate nohighlight">\(\hbar\)</span> in the denominator of the time dependent Schrodinger equation, <span class="math notranslate nohighlight">\(\frac{\partial}{\partial t} |\psi(t)\rangle = -\frac{i}{\hbar} H |\psi(t)\rangle\)</span>.</p>
+<p>By default, the unit of time in Qutip is set to dimensionless, so <span class="math notranslate nohighlight">\(\hbar\)</span> is used to convert between dimensionless time and physical time.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Constants</span>
+<span class="n">hbar</span><span class="o">=</span><span class="mf">6.67e-34</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span> <span class="c1">#Planck's reduced constant</span>
+<span class="n">eps0</span><span class="o">=</span><span class="mf">8.85e-12</span> <span class="c1"># permittivity of free space</span>
+<span class="n">c</span><span class="o">=</span><span class="mf">3e8</span> <span class="c1"># speed of light</span>
+
+<span class="c1">#Parameters</span>
+<span class="n">phase_matching_bandwidth</span><span class="o">=</span><span class="mf">1e13</span> <span class="c1"># approximate in Hz</span>
+<span class="n">n_refr</span> <span class="o">=</span> <span class="mf">2.2</span> <span class="c1"># refractive index of the crystal</span>
+<span class="n">beam_power</span><span class="o">=</span><span class="mf">1e-2</span> <span class="c1"># in Watts</span>
+<span class="n">beam_area</span><span class="o">=</span><span class="mf">1e-5</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># in m^2</span>
+<span class="n">pump_intensity</span><span class="o">=</span><span class="n">beam_power</span><span class="o">/</span><span class="n">beam_area</span>
+<span class="n">alpha_p</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pump_intensity</span><span class="o">/</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">eps0</span><span class="o">*</span><span class="n">n_refr</span><span class="p">),</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">#presentation parameters</span>
+<span class="n">plot_fontsize</span><span class="o">=</span><span class="mi">12</span>
+
+<span class="c1">#print(alpha_p)</span>
+<span class="n">chi2</span><span class="o">=</span><span class="mf">2.7e-12</span> <span class="c1"># (2.7 pm/V according to https://www.unitedcrystals.com/BBOProp.html) </span>
+<span class="c1">#chi = 0.2</span>
+<span class="n">chi</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">chi2</span><span class="o">*</span><span class="n">alpha_p</span><span class="o">/</span><span class="n">hbar</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">chi</span><span class="o">*</span><span class="n">hbar</span><span class="p">)</span>
+<span class="n">N1</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">N2</span> <span class="o">=</span> <span class="mi">10</span>
+
+
+<span class="c1"># definitions of operators </span>
+<span class="n">a</span>  <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">destroy</span><span class="p">(</span><span class="n">N1</span><span class="p">),</span> <span class="n">qeye</span><span class="p">(</span><span class="n">N2</span><span class="p">))</span>
+<span class="n">na</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">num</span><span class="p">(</span><span class="n">N1</span><span class="p">),</span>     <span class="n">qeye</span><span class="p">(</span><span class="n">N2</span><span class="p">))</span> 
+<span class="n">b</span>  <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">qeye</span><span class="p">(</span><span class="n">N1</span><span class="p">),</span>    <span class="n">destroy</span><span class="p">(</span><span class="n">N2</span><span class="p">))</span>
+<span class="n">nb</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">qeye</span><span class="p">(</span><span class="n">N1</span><span class="p">),</span>    <span class="n">num</span><span class="p">(</span><span class="n">N2</span><span class="p">))</span> 
+
+<span class="c1">#We obtain the following interaction Hamiltonian on the three fields $$a,b,p$$ after tracing out the pump field </span>
+<span class="c1"># the fully quantum 3-wave mixing Hamiltonion would be H_abp = chi2 * (a * b * p.dag() + a.dag() * b.dag() * p)</span>
+
+<span class="n">H0</span> <span class="o">=</span> <span class="mi">0</span><span class="o">*</span><span class="n">a</span> <span class="c1"># interaction Hamiltonian before the 3-wave mixing (used for calculating initial state)</span>
+<span class="n">Hab</span> <span class="o">=</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span> <span class="n">hbar</span> <span class="o">*</span><span class="n">chi</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">dag</span><span class="p">())</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.992292869760638e-07
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="initial-state-and-state-evolution">
+<h3>Initial state and state evolution<a class="headerlink" href="#initial-state-and-state-evolution" title="Permalink to this heading">#</a></h3>
+<p>In the following, we’ll will:</p>
+<ul class="simple">
+<li><p>initialize the input state psi0 of modes a and b, which are both in the vacuum state</p></li>
+<li><p>tlist: tlist is a list of times that specifies the times at which the system should be evaluated during the evolution. In the example, tlist is created using the numpy function linspace, which generates an array of evenly spaced values over a specified interval.</p></li>
+<li><p>c_ops is a list of collapse operators that describe the sources of decoherence and dissipation in the system. Collapse operators represent the interactions of the system with its environment that cause transitions between the energy eigenstates of the system.</p></li>
+<li><p>e_ops is a python list storing observables. Here, the e_ops list is empty, which means that there are no observables being monitored during the evolution of the system.</p></li>
+<li><p>We use the function mesolve from the Qutip library to solve the <a class="reference external" href="https://https://en.wikipedia.org/wiki/Quantum_master_equation">quantum master equation </a> to find the time evolution of the system. The function takes as input the Hamiltonian Hab, the initial state psi0, the list of times tlist, the list of collapse operators c_ops, and the list of observables e_ops. The function returns an object output that contains information about the time evolution of the system, such as the states of the system at each time in tlist.</p></li>
+</ul>
+<p>In the example, the c_ops list is empty, which means that there are no sources of decoherence or dissipation in the system. As a result, the evolution of the system is purely unitary and described by the Hamiltonian <span class="math notranslate nohighlight">\(H_{ab}\)</span>.</p>
+<p>The following code uses a python dictionary data structure to conveniently store operators and expected values. In anticipation of correlation values to be considered below, we’re including those in our dictionary as well.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># start in the ground (vacuum) state</span>
+<span class="n">psi0</span> <span class="o">=</span> <span class="n">tensor</span><span class="p">(</span><span class="n">basis</span><span class="p">(</span><span class="n">N1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">basis</span><span class="p">(</span><span class="n">N2</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># initial state in the vacuum</span>
+<span class="c1"># REVISION: to allow for some background light contamination (room lights, fluorescence, etc), let's actually start in a thermal state with mean photon number..</span>
+<span class="c1"># REVISION2: with thermal state, the code has to do density matrix evolution which is super slow. let's approximate by equally bright coherent state (which is an equally good approximation as there may be some laser background etc)</span>
+<span class="c1">#rho0= tensor(thermal_dm(N1, background_photons),thermal_dm(N2, background_photons))</span>
+<span class="c1">#psi0= tensor(displace(N1,sqrt(background_photons)),displace(N2,sqrt(background_photons)))*psi0</span>
+<span class="c1">#psi0= tensor(displace(N1,sqrt(background_photons)),displace(N2,sqrt(background_photons)))*psi0</span>
+<span class="n">theta</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">background_photons</span><span class="o">=</span><span class="mf">1e-20</span>
+<span class="c1">#c_ops = [] # c_ops is a list of collapse operators that describe the sources of decoherence and dissipation in the system. Collapse operators represent the interactions of the system with its environment that cause transitions between the energy eigenstates of the system.</span>
+<span class="n">n_th</span> <span class="o">=</span> <span class="n">background_photons</span>  <span class="c1"># bath temperature in terms of excitation number</span>
+<span class="n">c_ops</span> <span class="o">=</span> <span class="p">[]</span><span class="c1"># [sqrt((1+n_th)) * a, sqrt(n_th) * a.dag()]</span>
+
+<span class="n">psi0</span><span class="o">=</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">psi0</span> <span class="o">+</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">tensor</span><span class="p">(</span><span class="n">displace</span><span class="p">(</span><span class="n">N1</span><span class="p">,</span><span class="n">sqrt</span><span class="p">(</span><span class="n">background_photons</span><span class="p">)),</span><span class="n">qeye</span><span class="p">(</span><span class="n">N2</span><span class="p">))</span><span class="o">*</span><span class="n">psi0</span>
+<span class="c1">#rho0 = steadystate(H0, c_ops)</span>
+
+
+
+<span class="n">tlist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span> <span class="c1"># tlist is a list of times that specifies the times at which the system should be evaluated during the evolution. In the example, tlist is created using the numpy function linspace, which generates an array of evenly spaced values over a specified interval.</span>
+
+<span class="n">e_ops</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># e_ops is a python list storing observables. Here, the e_ops list is empty, which means that there are no observables being monitored during the evolution of the system</span>
+<span class="n">psi_out</span> <span class="o">=</span> <span class="n">mesolve</span><span class="p">(</span><span class="n">Hab</span><span class="p">,</span> <span class="n">psi0</span><span class="p">,</span> <span class="n">tlist</span><span class="p">,</span> <span class="n">c_ops</span><span class="p">,</span> <span class="n">e_ops</span><span class="p">)</span>
+
+<span class="n">ops_dict</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"na"</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">a</span><span class="p">,</span>
+  <span class="s2">"na_squared"</span><span class="p">:</span> <span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span>
+  <span class="s2">"nb"</span><span class="p">:</span> <span class="n">b</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span>
+  <span class="s2">"nb_squared"</span><span class="p">:</span> <span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">expected_vals_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">psi_out</span><span class="o">.</span><span class="n">states</span><span class="p">))</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ops_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()}</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">psi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">psi_out</span><span class="o">.</span><span class="n">states</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ops_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="n">expected_vals_dict</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">expect</span><span class="p">(</span><span class="n">ops_dict</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">psi</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>Let’s study <span class="math notranslate nohighlight">\(|\psi_{out} \rangle\)</span> by plotting four subplots that show the average number of photons in each mode a and b, as well as their fluctuations, as a function of time. The subplots are labeled with the corresponding quantities and the x-axis of all subplots is shared.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+
+<span class="n">tlistp</span><span class="o">=</span><span class="n">tlist</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tlist</span><span class="p">,</span> <span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"na"</span><span class="p">],</span> <span class="s1">'rx'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="sa">r</span><span class="s1">'$\langle \psi_</span><span class="si">{out}</span><span class="s1">| n_a| \psi_</span><span class="si">{out}</span><span class="s1"> \rangle \equiv \langle \psi_</span><span class="si">{out}</span><span class="s1">| a^\dagger a | \psi_</span><span class="si">{out}</span><span class="s1"> \rangle \equiv \langle a^\dagger a \rangle$'</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tlist</span><span class="p">,</span> <span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"nb"</span><span class="p">],</span> <span class="s1">'bx'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="sa">r</span><span class="s1">'$\langle n_b \rangle$'</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tlist</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"na_squared"</span><span class="p">]</span> <span class="o">-</span> <span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"na"</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="s1">'rx'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="sa">r</span><span class="s1">'$\sqrt{\langle( n_a - \langle n_a \rangle )^</span><span class="si">{2}</span><span class="s1"> \rangle }$'</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tlist</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"nb_squared"</span><span class="p">]</span> <span class="o">-</span> <span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"nb"</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="s1">'bx'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="sa">r</span><span class="s1">'$\sqrt{\langle( n_b -\langle n_b \rangle)^</span><span class="si">{2}</span><span class="s1">\rangle }$'</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tlist</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"na"</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"na"</span><span class="p">]),</span> <span class="s1">'k-'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="sa">r</span><span class="s1">'$\sqrt{\langle n_a \rangle + \langle n_a \rangle^</span><span class="si">{2}</span><span class="s1"> }$'</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tlist</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"nb_squared"</span><span class="p">]),</span> <span class="s1">'k-'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="sa">r</span><span class="s1">'$\sqrt{\langle n_b \rangle + \langle n_b \rangle^</span><span class="si">{2}</span><span class="s1"> }$'</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">[:</span><span class="mi">4</span><span class="p">]):</span>
+    <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">idx</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">idx</span><span class="o">%</span><span class="k">2</span>].legend()
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">"max_photon_flux_a=phase_matching_bandwidth * max(&lt;ada&gt;)= </span><span class="si">{:.1e}</span><span class="s2"> photons/sec"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">phase_matching_bandwidth</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"na"</span><span class="p">])))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>max_photon_flux_a=phase_matching_bandwidth * max(&lt;ada&gt;)= 2.5e+06 photons/sec
+</pre></div>
+</div>
+<img alt="_images/8e9dad205a3a8dbce3428c666be0aeb434f943b24b2dc7502de2c3a87916f53a.png" src="_images/8e9dad205a3a8dbce3428c666be0aeb434f943b24b2dc7502de2c3a87916f53a.png"/>
+</div>
+</div>
+</section>
+<section id="state-evolution">
+<h3>State evolution<a class="headerlink" href="#state-evolution" title="Permalink to this heading">#</a></h3>
+<p>Next, we will plot the photon distributions of two quantum optical modes a and b at selected times. The time indices are spaced over Ntsamples time steps and are stored in the t_idx_vec list.</p>
+<p>The following subplots show the state evolution (note the plots have shared horizontal and vertical axes). We represent the photon distributions as bar plots on the subplots.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+
+<span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span><span class="mi">5</span>
+
+<span class="k">def</span> <span class="nf">update_plot</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">psia</span> <span class="o">=</span> <span class="n">ptrace</span><span class="p">(</span><span class="n">psi_out</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">psib</span> <span class="o">=</span> <span class="n">ptrace</span><span class="p">(</span><span class="n">psi_out</span><span class="o">.</span><span class="n">states</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">bar_vals_a</span> <span class="o">=</span> <span class="n">real</span><span class="p">(</span><span class="n">psia</span><span class="o">.</span><span class="n">diag</span><span class="p">())</span>
+    <span class="n">bar_vals_b</span> <span class="o">=</span> <span class="n">real</span><span class="p">(</span><span class="n">psib</span><span class="o">.</span><span class="n">diag</span><span class="p">())</span>
+<span class="c1">#    max_val = max(bar_vals_a.max(), bar_vals_b.max())</span>
+    <span class="n">max_val</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">bar_vals_a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">bar_vals_b</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="c1"># ignore first entry P(0) which is always gonna be large</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N1</span><span class="p">),</span> <span class="n">bar_vals_a</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">N2</span><span class="p">),</span> <span class="n">bar_vals_b</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'$P(n)$'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'$P(n)$'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'$n_a$'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'$n_b$'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">10</span><span class="o">**-</span><span class="mi">8</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="n">bar_vals_a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">1.2</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">10</span><span class="o">**-</span><span class="mi">8</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="n">bar_vals_a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mf">1.2</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="n">t_selector</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span>
+    <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="nb">max</span><span class="o">=</span><span class="n">floor</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tlist</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
+    <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">'Time index:'</span><span class="p">,</span>
+    <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span>
+<span class="p">)</span>
+
+<span class="c1">#display(t_selector)</span>
+<span class="n">widgets</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">update_plot</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">tlist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">30</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "b3e1b13071e74c90a693a62b215156ce", "version_major": 2, "version_minor": 0}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function __main__.update_plot(t)&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="photon-number-statistics">
+<h3>Photon number statistics<a class="headerlink" href="#photon-number-statistics" title="Permalink to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ops_dict</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+  <span class="s2">"ad_ad_a_a"</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">a</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span><span class="p">,</span>
+  <span class="s2">"bd_bd_b_b"</span><span class="p">:</span> <span class="n">b</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">b</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span>
+  <span class="s2">"ad_a_bd_b"</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">dag</span><span class="p">()</span> <span class="o">*</span> <span class="n">b</span>
+  <span class="c1">#"ad_a_bd_b": a.dag() * b.dag() * a * b</span>
+
+<span class="p">})</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ops_dict</span><span class="p">:</span>
+    <span class="n">expected_vals_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">psi_out</span><span class="o">.</span><span class="n">states</span><span class="p">))</span>
+
+
+
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">psi</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">psi_out</span><span class="o">.</span><span class="n">states</span><span class="p">):</span>
+  <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">ops_dict</span><span class="p">:</span>
+    <span class="n">expected_vals_dict</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">expect</span><span class="p">(</span><span class="n">ops_dict</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">psi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>The following code updates the dictionary “ops_dict” by adding entries for the observables being monitored during the evolution of the system. These observables are the second-order coherence terms of the two harmonic oscillators, represented by the combinations of creation and annihilation operators. With self-evident notation, these are “ad_ad_a_a”, “bd_bd_b_b”, and “ad_a_bd_b”.</p>
+<p>The code then initializes the dictionary “expected_vals_dict” to store the expected values of these observables over time. This is done by creating an array of zeros with length equal to the number of times at which the system is evaluated during its evolution.</p>
+<p>Finally, the code computes the expected values of the observables by iterating over the states in the output of the mesolve function and using the expect function from Qutip to compute the expected values at each time step. These expected values are stored in the corresponding entries of the “expected_vals_dict” dictionary.</p>
+</section>
+<section id="second-order-coherence-functions">
+<h3>Second-order coherence functions<a class="headerlink" href="#second-order-coherence-functions" title="Permalink to this heading">#</a></h3>
+<p>Walls and Milburn, page 79: Classical fields satisfy the Cauchy-Schwartz inequality evaluated at the same time <span class="math notranslate nohighlight">\(t\)</span> on both detectors, i.e., $<span class="math notranslate nohighlight">\( \langle \psi_{out}(t) | a_1^{\dagger} a_1 a_2^{\dagger}  a_2 | \psi_{out}(t) \rangle \leq \langle (a_1^{\dagger})^{2}  (a_1)^{2}  \rangle_t \)</span>$, or equivalently</p>
+<p>$<span class="math notranslate nohighlight">\((g_{12}^{(2)})_{t}^2 \leq (g_{1}^{(2)}g_{2}^{(2)})_{t}\)</span>$.</p>
+<p>Plotting the correlation functions, we see a strong violation of the Cauchy-Schwartz inequality in the weak-pump limit. In fact, the photon correlations of the squeezed fields produced from a vacuum passing through the parametric amplifier are not just strongly nonclassical but actually saturate the bound on the maximum allowed by quantum mechanics.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">background</span><span class="o">=</span><span class="mf">1e-30</span>
+<span class="n">quantities_dict</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">"g_aa"</span><span class="p">:</span> <span class="p">[</span><span class="sa">r</span><span class="s1">'$g_</span><span class="si">{11}</span><span class="s1">^{(2)}(t)$'</span><span class="p">,</span> <span class="p">((</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"ad_ad_a_a"</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">background</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"na"</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">))],</span> 
+  <span class="s2">"g_bb"</span><span class="p">:</span> <span class="p">[</span><span class="sa">r</span><span class="s1">'$g_</span><span class="si">{bb}</span><span class="s1">^{(2)}(t)$'</span><span class="p">,</span> <span class="p">((</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"bd_bd_b_b"</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">background</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"nb"</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">))],</span>
+  <span class="s2">"g_ab"</span><span class="p">:</span> <span class="p">[</span><span class="sa">r</span><span class="s1">'$g_</span><span class="si">{ab}</span><span class="s1">^{(2)}(t)$'</span><span class="p">,</span> <span class="p">((</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"ad_a_bd_b"</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">background</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"na"</span><span class="p">]</span><span class="o">*</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"nb"</span><span class="p">]))],</span>
+  <span class="s2">"g_ab_squared"</span><span class="p">:</span> <span class="p">[</span><span class="sa">r</span><span class="s1">'$(g_</span><span class="si">{ab}</span><span class="s1">^{(2)}(t)))^</span><span class="si">{2}</span><span class="s1">$'</span><span class="p">,</span> <span class="p">((</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"ad_a_bd_b"</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">background</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"na"</span><span class="p">]</span><span class="o">*</span><span class="n">expected_vals_dict</span><span class="p">[</span><span class="s2">"nb"</span><span class="p">]))</span><span class="o">**</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">quantity_key</span><span class="p">,</span> <span class="p">(</span><span class="n">ylabel</span><span class="p">,</span> <span class="n">data</span><span class="p">))</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">quantities_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">idx</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">idx</span><span class="o">%</span><span class="k">2</span>].plot(tlist, data, 'rx', linewidth=2)
+    <span class="n">axes</span><span class="p">[</span><span class="n">idx</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">idx</span><span class="o">%</span><span class="k">2</span>].set_xlabel("$t$", fontsize=plot_fontsize)
+    <span class="n">axes</span><span class="p">[</span><span class="n">idx</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">idx</span><span class="o">%</span><span class="k">2</span>].set_xlim(1, 20) # 
+    <span class="n">axes</span><span class="p">[</span><span class="n">idx</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">idx</span><span class="o">%</span><span class="k">2</span>].set_ylabel(ylabel, fontsize=plot_fontsize)
+<span class="c1">#    axes[idx//2, idx%2].set_yscale("log")</span>
+
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/15a594feddb7b920207b9cabb650afa5ec3108573c1a16eb4407966f217117ad.png" src="_images/15a594feddb7b920207b9cabb650afa5ec3108573c1a16eb4407966f217117ad.png"/>
+</div>
+</div>
+</section>
+</section>
+<section id="sources-and-further-reading">
+<h2>Sources and further reading<a class="headerlink" href="#sources-and-further-reading" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://doi.org/10.1080/00107514.2018.1488463">Review Article</a></p></li>
+<li><p><a class="reference external" href="https://www.hcphotonics.com/ppln-guide-overview">HC Photonics PPLN GUIDE: Overview</a></p></li>
+<li><p><a class="reference external" href="https://www.qutools.com/files/quED/quED_manual.pdf">quED Manual</a></p></li>
+<li><p>Saleh and Teich, <em>Fundamentals of Photonics</em></p></li>
+<li><p>[Bocquillon et al, PRA 79 035801 (200p](<a class="reference external" href="http://dx.doi.org/10.1103/PhysRevA.79.035801">http://dx.doi.org/10.1103/PhysRevA.79.035801</a></p></li>
+<li><p><a class="reference external" href="http://stacks.iop.org/JPhysB/42/114013">Razavi et al, JPhysB 42 114013 (2009)</a></p></li>
+<li><p><a class="reference external" href="https://aapt.scitation.org/doi/10.1119/1.1737397">Thorn et al, Am Jo of Phys 72, 1210-1219 (2004)</a></p></li>
+<li><p>quTools HBT manual: <a class="reference external" href="https://www.qutools.com/files/quED/quED-HBT/quED-HBT-manual.pdf">https://www.qutools.com/files/quED/quED-HBT/quED-HBT-manual.pdf</a></p></li>
+<li><p>quTools secret HBT manual: <a class="reference external" href="https://www.qutools.com/files/quED/worksheets/qutools_HBT.pdf">https://www.qutools.com/files/quED/worksheets/qutools_HBT.pdf</a></p></li>
+<li><p>[M. Beck, J. Opt. Soc. Am. B 24, 2972-2978 (2007)]<a class="reference external" href="https://opg.optica.org/josab/abstract.cfm?URI=josab-24-12-2972">https://opg.optica.org/josab/abstract.cfm?URI=josab-24-12-2972</a></p></li>
+<li><p>Loudon, <em>The Quantum Theory of Light</em></p></li>
+<li><p>Fox, <em>Quantum Optics: An Introduction</em></p></li>
+<li><p>Gerry and Knight, <em>Introductory Quantum Optics</em></p></li>
+</ul>
+</section>
+<section id="pre-lab-questions">
+<h2>Pre-Lab Questions<a class="headerlink" href="#pre-lab-questions" title="Permalink to this heading">#</a></h2>
+<p>Before coming to the lab for the HBT experiment, please complete these pre-lab questions and be ready to <em>show your work</em>. If you have questions, ask the instructor before starting the lab.</p>
+<ol class="arabic simple">
+<li><p>What is <span class="math notranslate nohighlight">\(\gtwo(0)\)</span> for a number state with 2 photons? What about with 3 photons? Generalize this to Fock state <span class="math notranslate nohighlight">\(\ket{n}\)</span> with n photons and plot <span class="math notranslate nohighlight">\(\gtwo(0)\)</span> as a function of n.</p></li>
+<li><p>What is <span class="math notranslate nohighlight">\(\gtwo(0)\)</span> for a coherent state <span class="math notranslate nohighlight">\(\ket{\alpha}\)</span>?</p></li>
+<li><p><em>Bonus:</em> What is <span class="math notranslate nohighlight">\(\gtwo(0)\)</span> for a thermal state?</p></li>
+</ol>
+</section>
+</section>
+<script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+<script>kernelName = 'python3'</script>
+</article>
+<footer class="prev-next-footer">
+<!-- Previous / next buttons -->
+<div class="prev-next-area">
+<a class="left-prev" href="T3E1-EXTRAS-interference-2-homodyne-detection.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">EXTRAS – Homodyne Detection</p>
+</div>
+</a>
+<a class="right-next" href="T2E1-LAB-HBT.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">LAB – Hanbury Brown - Twiss Lab (Week 1)</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-photon-source-spontaneous-parametric-down-conversion-spdc-a-id-spdc-a">Single photon source: Spontaneous Parametric Down-Conversion (SPDC) <a id="spdc"></a></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-matching-conditions">Phase Matching Conditions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-description">Mathematical Description</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-nonlinear-optics">Classical Nonlinear optics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further reading</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detection-a-id-apd-a">Detection <a id="apd"></a></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-gtwo-0-a-id-hbt-a">Second order coherence - <span class="math notranslate nohighlight">\(\gtwo\)</span>(0)<a id="hbt"></a></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recall-a-beamsplitter">Recall a beamsplitter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hanbury-brown-twiss-hbt-experiment">Hanbury Brown-Twiss (HBT) Experiment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coincidence-with-a-single-photon">Coincidence with a single photon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-time-coherence">Second order time coherence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#heralded-single-photon-source">Heralded single-photon source</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-by-qutip">Simulation by QuTip</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operators-and-hamiltonian">Operators and Hamiltonian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-state-and-state-evolution">Initial state and state evolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#state-evolution">State evolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#photon-number-statistics">Photon number statistics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-coherence-functions">Second-order coherence functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-and-further-reading">Sources and further reading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-lab-questions">Pre-Lab Questions</a></li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<div class="bd-footer-content__inner container">
+<div class="footer-item">
+<p class="component-author">
+By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
+</p>
+</div>
+<div class="footer-item">
+<p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+</p>
+</div>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+<div>
+<div class="msger-expand">
+<div class="msger-header-title">
+<i class="fas fa-comment-alt"></i> ChatTutor
+    </div>
+<div class="msger-header-options">
+<span><i class="fas fa-solid fa-caret-up"></i></span>
+</div>
+</div>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<div class="msger minimized">
+<div class="msg-header-helper">
+<div class="msger-header">
+<div class="msger-header-title">
+<i class="fas fa-comment-alt"></i> ChatTutor
+        </div>
+<div class="button-div" id="themeBtnDiv">
+<button class="theme-button" id="themeBtn">Toggle theme</button>
+<button class="msger-minimize" id="minimizeBtn"><span class="material-symbols-outlined" style="font-size: 15px !important; padding: 0 !important; margin: 0 !important; vertical-align: middle">cancel</span></button>
+</div>
+</div>
+</div>
+<main class="msger-chat">
+<div class="msg left-msg">
+<div class="msg-bgd">
+<div class="msg-bubble">
+<div class="msg-info">
+<div class="msg-info-name">assistant</div>
+</div>
+<div class="msg-text">Hello, what can i do to help you?</div>
+</div>
+</div>
+</div>
+<div class="clear-btn-container" id="clearContId">
+</div>
+<div id="scrollHelper" style="background-color: black;">
+<!-- Helper for keeping scrolling  -->
+</div>
+</main>
+<form class="msger-inputarea">
+<input class="msger-input" id="msgInput" placeholder="Enter your message..." type="text"/>
+<button class="msger-send-btn" id="sendBtn" type="submit">
+<span class="material-symbols-outlined" style="font-size: 15px !important; padding: 0 !important; margin: 0 !important; vertical-align: middle">
+            send
+          </span>
+</button>
+<button class="clear-btn" id="clearBtnId">
+<span class="material-symbols-outlined" style="font-size: 15px !important; padding: 0 !important; margin: 0 !important; vertical-align: middle">
+                delete_forever
+            </span>
+</button>
+<button class="stop-gen-btn" id="stopBtnId">
+<span class="material-symbols-outlined" style="font-size: 15px !important; padding: 0 !important; margin: 0 !important; vertical-align: middle">
+                stop_circle
+            </span>
+</button>
+</form>
+</div>
+</div></main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+<footer class="bd-footer">
+</footer>
+<script src="_static/scripts/chattutor.js"></script></body>
+</html>
