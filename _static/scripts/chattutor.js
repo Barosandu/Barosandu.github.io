@@ -400,7 +400,7 @@ function loadConversationFromLocalStorage() {
     conversation.forEach(message => {addMessage(message["role"], message["content"], false)})
   }
   else conversation = []
-  MathJax.typesetPromise();
+  // MathJax.typesetPromise();
 }
 
 
@@ -636,7 +636,7 @@ function updateLastMessage(newContent) {
   } else {
     console.error('No message has been added yet.');
   }
-  MathJax.typesetPromise();
+  // MathJax.typesetPromise();
 
 }
 
