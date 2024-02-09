@@ -1,165 +1,95 @@
 
 <!DOCTYPE html>
 
-
-<html lang="en" data-content_root="./" >
-
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>TEXT – Interference, Entanglement and Quantum-Enhanced Metrology &#8212; 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
-  
-  
-  
-  <script data-cfasync="false">
+<html data-content_root="./" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>TEXT – Interference, Entanglement and Quantum-Enhanced Metrology — 6.2410 -- Laboratory for Quantum Information Science and Engineering</title>
+<script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
-  
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-  
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
-
-    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing';</script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="LAB – Interference, Entanglement and Quantum-Enhanced Metrology" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html" />
-    <link rel="prev" title="BASICS – Quantum Optics" href="BASICS-quantum-optics-basics.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
-  </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
-  
-  
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
+<!-- Loaded before other Sphinx assets -->
+<link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="_static/pygments.css?v=fa44fd50" rel="stylesheet" type="text/css"/>
+<link href="_static/styles/sphinx-book-theme.css?v=384b581d" rel="stylesheet" type="text/css"/>
+<link href="_static/togglebutton.css?v=13237357" rel="stylesheet" type="text/css"/>
+<link href="_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" rel="stylesheet" type="text/css"/>
+<link href="_static/sphinx-thebe.css?v=4fa983c6" rel="stylesheet" type="text/css"/>
+<link href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" rel="preload"/>
+<link as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" rel="preload"/>
+<script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/documentation_options.js?v=9eb32ce0"></script>
+<script src="_static/doctools.js?v=888ff710"></script>
+<script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="_static/copybutton.js?v=f281be69"></script>
+<script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="_static/togglebutton.js?v=4a39c7ea"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script src="_static/design-tabs.js?v=36754332"></script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+<script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+<script>window.MathJax = {"tex": {"macros": {"ket": ["\\left|{#1}\\right\\rangle", 1], "bra": ["\\left\\langle{#1}\\right|", 1], "braket": ["\\left\\langle{#1}\\middle|{#2}\\right\\rangle", 2], "adagger": ["\\hat{a}^{\\dagger}"], "ahat": ["\\hat{a}"], "bdagger": ["\\hat{b}^{\\dagger}"], "bhat": ["\\hat{b}"], "cdagger": ["\\hat{c}^{\\dagger}"], "chat": ["\\hat{c}"], "ddagger": ["\\hat{d}^{\\dagger}"], "dhat": ["\\hat{d}"], "edagger": ["\\hat{e}^{\\dagger}"], "ehat": ["\\hat{e}"], "fdagger": ["\\hat{f}^{\\dagger}"], "fhat": ["\\hat{f}"], "gdagger": ["\\hat{g}^{\\dagger}"], "ghat": ["\\hat{g}"], "hdagger": ["\\hat{h}^{\\dagger}"], "hhat": ["\\hat{h}"], "gtwo": ["g^{(2)}"], "H": ["\\ket{H}"], "V": ["\\ket{V}"], "D": ["\\ket{D}"], "AD": ["\\ket{AD}"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing';</script>
+<link href="genindex.html" rel="index" title="Index"/>
+<link href="search.html" rel="search" title="Search"/>
+<link href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html" rel="next" title="LAB – Interference, Entanglement and Quantum-Enhanced Metrology"/>
+<link href="BASICS-quantum-optics-basics.html" rel="prev" title="BASICS – Quantum Optics"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="en" name="docsearch:language"/>
+<link href="_static/styles/chattutor.style.css" rel="stylesheet" type="text/css"/></head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<a class="skip-link" href="#main-content" id="pst-skip-link">Skip to main content</a>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>
     Back to top
   </button>
-
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+<input class="sidebar-toggle" id="__primary" name="__primary" type="checkbox"/>
+<label class="overlay overlay-primary" for="__primary"></label>
+<input class="sidebar-toggle" id="__secondary" name="__secondary" type="checkbox"/>
+<label class="overlay overlay-secondary" for="__secondary"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search this book..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search this book..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
-  </div>
-  
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
-    </header>
-  
-
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
-      
-      
-      
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-
-  
-
+</div>
+<header class="bd-header navbar navbar-expand-lg bd-navbar">
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
 <a class="navbar-brand logo" href="intro.html">
-  
-  
-  
-  
-  
-    
-    
-      
-    
-    
-    <img src="_static/logo-ibm.jpg" class="logo__image only-light" alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home"/>
-    <script>document.write(`<img src="_static/logo-ibm.jpg" class="logo__image only-dark" alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home"/>`);</script>
-  
-  
+<img alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home" class="logo__image only-light" src="_static/logo-ibm.jpg"/>
+<script>document.write(`<img src="_static/logo-ibm.jpg" class="logo__image only-dark" alt="6.2410 -- Laboratory for Quantum Information Science and Engineering - Home"/>`);</script>
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
+<div class="sidebar-primary-item">
+<script>
  document.write(`
    <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
@@ -168,17 +98,16 @@
    </button>
  `);
  </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+<ul class="nav bd-sidenav bd-sidenav__home-link">
+<li class="toctree-l1">
+<a class="reference internal" href="intro.html">
                     6.2410 – Laboratory in Quantum Systems Engineering: Quantum Engineering Platforms
                 </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introductory Material</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="BASICS-quantum-optics-basics.html">BASICS – Quantum Optics</a></li>
 </ul>
@@ -211,208 +140,96 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="FINAL-PROJECTS.html">Final Design Project</a></li>
 </ul>
-
-    </div>
+</div>
 </nav></div>
-    </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
-
-
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
-
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content">
 <div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article">
 <div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
+<div class="header-article-items__start">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
+<span class="fa-solid fa-bars"></span>
 </label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
 <div class="article-header-buttons">
-
-
-
-
-
 <div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
+<button aria-expanded="false" aria-label="Launch interactive content" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-rocket"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://mybinder.org/v2/gh/dkeathley/S23-6.2410-lab/main?urlpath=tree/T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb" target="_blank" title="Launch onBinder">
 <span class="btn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
+<img src="_static/images/logo_binder.svg"/>
+</span>
 <span class="btn__text-container">Binder</span>
 </a>
 </li>
-      
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
+<li><a class="btn btn-sm dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://colab.research.google.com/github/dkeathley/S23-6.2410-lab/blob/main/T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb" target="_blank" title="Launch onColab">
 <span class="btn__icon-container">
-  
-    <img src="_static/images/logo_colab.png">
-  </span>
+<img src="_static/images/logo_colab.png"/>
+</span>
 <span class="btn__text-container">Colab</span>
 </a>
 </li>
-      
-  </ul>
+</ul>
 </div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/dkeathley/S23-6.2410-lab" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
+<button aria-expanded="false" aria-label="Source repositories" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fab fa-github"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-source-repository-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab" target="_blank" title="Source repository">
 <span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
+<i class="fab fa-github"></i>
+</span>
 <span class="btn__text-container">Repository</span>
 </a>
 </li>
-      
-      
-      
-      
-      <li><a href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FT3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
+<li><a class="btn btn-sm btn-source-issues-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="https://github.com/dkeathley/S23-6.2410-lab/issues/new?title=Issue%20on%20page%20%2FT3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.html&amp;body=Your%20issue%20content%20here." target="_blank" title="Open an issue">
 <span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
+<i class="fas fa-lightbulb"></i>
+</span>
 <span class="btn__text-container">Open issue</span>
 </a>
 </li>
-      
-  </ul>
+</ul>
 </div>
-
-
-
-
-
-
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="_sources/T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
+<button aria-expanded="false" aria-label="Download this page" class="btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+<i class="fas fa-download"></i>
+</button>
+<ul class="dropdown-menu">
+<li><a class="btn btn-sm btn-download-source-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" href="_sources/T3E1-TEXT--entanglement-interference-quantum-enhanced-sensing.ipynb" target="_blank" title="Download source file">
 <span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
+<i class="fas fa-file"></i>
+</span>
 <span class="btn__text-container">.ipynb</span>
 </a>
 </li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
+<li>
+<button class="btn btn-sm btn-download-pdf-button dropdown-item" data-bs-placement="left" data-bs-toggle="tooltip" onclick="window.print()" title="Print to PDF">
 <span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
+<i class="fas fa-file-pdf"></i>
+</span>
 <span class="btn__text-container">.pdf</span>
 </button>
 </li>
-      
-  </ul>
+</ul>
 </div>
-
-
-
-
-<button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
+<button class="btn btn-sm btn-fullscreen-button" data-bs-placement="bottom" data-bs-toggle="tooltip" onclick="toggleFullScreen()" title="Fullscreen mode">
 <span class="btn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
+<i class="fas fa-expand"></i>
+</span>
 </button>
-
-
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -422,8 +239,6 @@ document.write(`
   </button>
 `);
 </script>
-
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -431,29 +246,23 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__secondary" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
 </label>
 </div></div>
-      
-    </div>
-  
 </div>
 </div>
-              
-              
-
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>TEXT – Interference, Entanglement and Quantum-Enhanced Metrology</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entangled-photon-pair-generation-and-measurement">Entangled Photon Pair Generation and Measurement</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab-1-questions">Prelab 1 Questions</a></li>
 </ul>
@@ -475,26 +284,22 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
-            </nav>
-        </div>
-    </div>
+</nav>
 </div>
-
-              
-                
+</div>
+</div>
 <div id="searchbox"></div>
-                <article class="bd-article">
-                  
-  <section class="tex2jax_ignore mathjax_ignore" id="text-interference-entanglement-and-quantum-enhanced-metrology">
+<article class="bd-article">
+<section class="tex2jax_ignore mathjax_ignore" id="text-interference-entanglement-and-quantum-enhanced-metrology">
 <h1>TEXT – Interference, Entanglement and Quantum-Enhanced Metrology<a class="headerlink" href="#text-interference-entanglement-and-quantum-enhanced-metrology" title="Link to this heading">#</a></h1>
 <p>In this chapter we examine entangled photon pair generation, single-photon interference, entangled photon pair interference by way of the Hong-Ou-Mandel effect, and entangled multi-photon Fock state interference for quantum-enhanced phase sensing.  Along the way we will discuss basic principles important to a variety of areas in quantum photonics, such as: the interaction of photons with beamsplitters; the interference of photon number states; signal detection and processing methods such as coincidence detection; and how to analyze statistical fluctuations of photon detection events for determining sensitivity and signal to noise ratio in measurements.</p>
 <p>The information and techniques discussed here will not only be useful for your lab exercises, but will be critical tools that you can leverage for your final projets.</p>
 <section id="entangled-photon-pair-generation-and-measurement">
 <h2>Entangled Photon Pair Generation and Measurement<a class="headerlink" href="#entangled-photon-pair-generation-and-measurement" title="Link to this heading">#</a></h2>
-<iframe src="https://drive.google.com/file/d/1OvJFfZyYU3RodsB9eTQpItGA3ZKAdu-0/preview" width="640" height="480" allow="autoplay"></iframe>
+<iframe allow="autoplay" height="480" src="https://drive.google.com/file/d/1OvJFfZyYU3RodsB9eTQpItGA3ZKAdu-0/preview" width="640"></iframe>
 <p>You will work with entangled photon pairs that are generated using SPDC.  This process is also described in the T2E1 material in more technical detail, and you can also read the information in the <a class="reference external" href="https://drive.google.com/file/d/1CqRNSabbBTxx3_eC80l3JY_pydcolXQg/view?usp=share_link">QuED manual</a> which is quite helpful.  Here we will stick to the most important aspects important to understanding the emitted photons and how we can use them.</p>
 <figure class="align-default" id="fig-t3e1-spdc">
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-spdc-cone-angles.png"><img alt="SPDC Cone Angles" class="bg-primary mb-1" src="_images/T3E1-spdc-cone-angles.png" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-spdc-cone-angles.png"><img alt="SPDC Cone Angles" class="bg-primary mb-1" src="_images/T3E1-spdc-cone-angles.png" style="width: 800px;"/></a>
 <figcaption>
 <p><span class="caption-number">Fig. 5 </span><span class="caption-text">Simplified schematic of the SPDC source that you will use in the lab and possible cone angles of the entangled photon pair outputs from the crystal.</span><a class="headerlink" href="#fig-t3e1-spdc" title="Link to this image">#</a></p>
 </figcaption>
@@ -504,14 +309,14 @@ document.write(`
 \[ \ket{\psi}  = \frac{1}{\sqrt{2}} \big\lbrace \ket{H}_a\ket{H}_b  + \ket{V}_a\ket{V}_b\big\rbrace\]</div>
 <p>Where we have taken the top path to be path <span class="math notranslate nohighlight">\(a\)</span> and the bottom to be path <span class="math notranslate nohighlight">\(b\)</span>.  To get a feeling for the entanglement, consider a simple experiment as shown in <a class="reference internal" href="#fig-t3e1-entanglement-setup"><span class="std std-numref">Fig. 6</span></a>.</p>
 <figure class="align-default" id="fig-t3e1-entanglement-setup">
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-entangled-photon-meas-setup.png"><img alt="Entanglement Setup" class="bg-primary mb-1" src="_images/T3E1-entangled-photon-meas-setup.png" style="width: 400px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-entangled-photon-meas-setup.png"><img alt="Entanglement Setup" class="bg-primary mb-1" src="_images/T3E1-entangled-photon-meas-setup.png" style="width: 400px;"/></a>
 <figcaption>
 <p><span class="caption-number">Fig. 6 </span><span class="caption-text">Schematic of an entanglement experiment.</span><a class="headerlink" href="#fig-t3e1-entanglement-setup" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Each path is sent through a polarizer and then a detector after which we consider only coincident events.  Let’s now consider the act of measuring the photons after the polarizers in arms <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>.  The polarizer acts to select out only one polarization angle.  Since our incident light has both polarizations, we need to understand how both components are projected onto the polarization axis.</p>
 <figure class="align-default" id="fig-t3e1-polarizer-projection">
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-polarizer-projection.png"><img alt="Polarizer Projection" class="bg-primary mb-1" src="_images/T3E1-polarizer-projection.png" style="width: 500px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-polarizer-projection.png"><img alt="Polarizer Projection" class="bg-primary mb-1" src="_images/T3E1-polarizer-projection.png" style="width: 500px;"/></a>
 <figcaption>
 <p><span class="caption-number">Fig. 7 </span><span class="caption-text">The horizontal and vertical polarization states are projected onto the polarizer axis denoted by the red line.</span><a class="headerlink" href="#fig-t3e1-polarizer-projection" title="Link to this image">#</a></p>
 </figcaption>
@@ -537,11 +342,11 @@ document.write(`
 </section>
 <section id="single-photon-interference-and-interaction-free-measurement">
 <h2>Single-Photon Interference and Interaction-Free Measurement<a class="headerlink" href="#single-photon-interference-and-interaction-free-measurement" title="Link to this heading">#</a></h2>
-<iframe src="https://drive.google.com/file/d/1MVpfD6w8qPrWElpTsG6HJn-XRTBKQyI-/preview" width="640" height="480" allow="autoplay"></iframe>
+<iframe allow="autoplay" height="480" src="https://drive.google.com/file/d/1MVpfD6w8qPrWElpTsG6HJn-XRTBKQyI-/preview" width="640"></iframe>
 <p>Before moving on to multiple-particle interference, let us now consider single-particle interference.  We will also discuss how in this single-particle case one can achieve measurement without interaction.</p>
 <p>Consider the single-photon interferometer as shown in <a class="reference internal" href="#fig-t3e1-single-photon-interferometer"><span class="std std-numref">Fig. 8</span></a></p>
 <figure class="align-default" id="fig-t3e1-single-photon-interferometer">
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-single-photon-interferometer.png"><img alt="Single Photon Interference" class="bg-primary mb-1" src="_images/T3E1-single-photon-interferometer.png" style="width: 600px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/T3E1-single-photon-interferometer.png"><img alt="Single Photon Interference" class="bg-primary mb-1" src="_images/T3E1-single-photon-interferometer.png" style="width: 600px;"/></a>
 <figcaption>
 <p><span class="caption-number">Fig. 8 </span><span class="caption-text">Interferference of a single photon in a Mach-Zender interferometer.  An optional absorbing object can be placed in one of the paths.</span><a class="headerlink" href="#fig-t3e1-single-photon-interferometer" title="Link to this image">#</a></p>
 </figcaption>
@@ -601,12 +406,12 @@ document.write(`
 </section>
 <section id="interference-of-two-single-photons-the-hong-ou-mandel-effect">
 <h2>Interference of Two Single Photons: The Hong-Ou-Mandel Effect<a class="headerlink" href="#interference-of-two-single-photons-the-hong-ou-mandel-effect" title="Link to this heading">#</a></h2>
-<iframe src="https://drive.google.com/file/d/1EbP7heyjad4oQek8uBg5gI4dMnObpFh_/preview" width="640" height="480" allow="autoplay"></iframe>
+<iframe allow="autoplay" height="480" src="https://drive.google.com/file/d/1EbP7heyjad4oQek8uBg5gI4dMnObpFh_/preview" width="640"></iframe>
 <p>We have now examined how a single photon interferes with itself, but how do two single coincident photons interfere with each other at a beamsplitter?  In this section we explore such two-photon interference.  We examine how when the two photons are indistinguishable in every way, the interference can lead to photon bunching and anti-correlation at the output ports.  The outgoing state generated is referred to as a two-photon NOON state of the form <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}} ( \ket{N}_a\ket{0}_b + \ket{0}_a\ket{N}_b )\)</span>.  Pushing beyond this observation, in the text that follows this section we examine how NOON states can generally be used for quantum-enhanced sensing.</p>
 <p>Imagine the scenario depicted in <a class="reference internal" href="#hom-setup"><span class="std std-numref">Fig. 9</span></a>.  A nonlinear crystal is used to generate precisely two photons of energy <span class="math notranslate nohighlight">\(\hbar\omega\)</span> when excited by a pulse with a photon energy of <span class="math notranslate nohighlight">\(2\hbar\omega\)</span>.  This process is called spontaneous parametric down-conversion and is a common technique for generating entangled photon pairs.</p>
 <p>The two photons travel away from the crystal along two paths (top and bottom as shown).  They are then brought together and interfere within a beamsplitter.</p>
 <figure class="align-default" id="hom-setup">
-<a class="bg-primary mb-1 reference internal image-reference" href="https://drive.google.com/uc?export=view&amp;id=1amZRBEKAn8JTkZXHi7SUlqqTjZfi2tXc"><img alt="HOM-setup" class="bg-primary mb-1" src="https://drive.google.com/uc?export=view&amp;id=1amZRBEKAn8JTkZXHi7SUlqqTjZfi2tXc" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://drive.google.com/uc?export=view&amp;id=1amZRBEKAn8JTkZXHi7SUlqqTjZfi2tXc"><img alt="HOM-setup" class="bg-primary mb-1" src="https://drive.google.com/uc?export=view&amp;id=1amZRBEKAn8JTkZXHi7SUlqqTjZfi2tXc" style="width: 800px;"/></a>
 <figcaption>
 <p><span class="caption-number">Fig. 9 </span><span class="caption-text">Experimental setup for studying the HOM effect.</span><a class="headerlink" href="#hom-setup" title="Link to this image">#</a></p>
 </figcaption>
@@ -656,7 +461,7 @@ document.write(`
 \]</div>
 <p>Remember that probabilities of outcomes are related to <span class="math notranslate nohighlight">\(\braket{\psi_\mathrm{out}}{\psi_\mathrm{out}}\)</span>, thus we can make the following map of outcomes at each detector.</p>
 <figure class="align-default" id="hom-possibilities-w-tau">
-<a class="bg-primary mb-1 reference internal image-reference" href="https://drive.google.com/uc?export=view&amp;id=1sRjwvkQuXH4L5q9mrOIiP2TysdWnx54_"><img alt="HOM-w-tau" class="bg-primary mb-1" src="https://drive.google.com/uc?export=view&amp;id=1sRjwvkQuXH4L5q9mrOIiP2TysdWnx54_" style="width: 500px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://drive.google.com/uc?export=view&amp;id=1sRjwvkQuXH4L5q9mrOIiP2TysdWnx54_"><img alt="HOM-w-tau" class="bg-primary mb-1" src="https://drive.google.com/uc?export=view&amp;id=1sRjwvkQuXH4L5q9mrOIiP2TysdWnx54_" style="width: 500px;"/></a>
 <figcaption>
 <p><span class="caption-number">Fig. 10 </span><span class="caption-text">Four different possibilities of detection in port c and d given a non-zero delay <span class="math notranslate nohighlight">\(\tau\)</span>.</span><a class="headerlink" href="#hom-possibilities-w-tau" title="Link to this image">#</a></p>
 </figcaption>
@@ -674,7 +479,7 @@ document.write(`
 \]</div>
 <p>leading to the following map of outcomes at each detector.</p>
 <figure class="align-default" id="hom-possibilities-wo-tau">
-<a class="bg-primary mb-1 reference internal image-reference" href="https://drive.google.com/uc?export=view&amp;id=1flZvEwgcemSbJuNBVVW8DBaGF-AVNtLS"><img alt="HOM-w-tau" class="bg-primary mb-1" src="https://drive.google.com/uc?export=view&amp;id=1flZvEwgcemSbJuNBVVW8DBaGF-AVNtLS" style="width: 500px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://drive.google.com/uc?export=view&amp;id=1flZvEwgcemSbJuNBVVW8DBaGF-AVNtLS"><img alt="HOM-w-tau" class="bg-primary mb-1" src="https://drive.google.com/uc?export=view&amp;id=1flZvEwgcemSbJuNBVVW8DBaGF-AVNtLS" style="width: 500px;"/></a>
 <figcaption>
 <p><span class="caption-number">Fig. 11 </span><span class="caption-text">Two different possibilities of detection in port c and d given a zero delay <span class="math notranslate nohighlight">\(\tau\)</span> such that the two photons are indistinguishable in every way at the beamsplitter.  Note each pulse now contains two photons, and the probability of each occurance is <span class="math notranslate nohighlight">\(1/2\)</span>.</span><a class="headerlink" href="#hom-possibilities-wo-tau" title="Link to this image">#</a></p>
 </figcaption>
@@ -696,7 +501,7 @@ document.write(`
 </section>
 <section id="taking-things-further-quantum-enhanced-sensing-with-noon-states">
 <h2>Taking Things Further: Quantum Enhanced Sensing with NOON States<a class="headerlink" href="#taking-things-further-quantum-enhanced-sensing-with-noon-states" title="Link to this heading">#</a></h2>
-<iframe src="https://drive.google.com/file/d/1DDXMLs7zM1zuTzA03w7DcJZp1YPt03Mu/preview" width="640" height="480" allow="autoplay"></iframe>
+<iframe allow="autoplay" height="480" src="https://drive.google.com/file/d/1DDXMLs7zM1zuTzA03w7DcJZp1YPt03Mu/preview" width="640"></iframe>
 <p>Notice that when <span class="math notranslate nohighlight">\(\tau = 0\)</span> the state takes on an interesting superposition of <span class="math notranslate nohighlight">\(N=2\)</span> Fock states.  Such states are called NOON states, so here we would have an <span class="math notranslate nohighlight">\(N=2\)</span> NOON state.  It turns out that if we send such states through a subsequent interferometer, we can obtain a quantum advantage in sensitivity to phase shifts.  In this section, we will explore why this is important and how it works.  In the practice problems and exercises, we will also explore limitations to the generalized implementation of this approach and touch on other approaches that are used for similar purposes.</p>
 <p>Before we talk about sensing phase shifts, you might be wondering why someone would want to measure optical phase in the first place?  Typically, it is not the phase shift itself that we are after, but rather the physical change that has caused the phase shift.  A famous example of this is the measurement of gravitational waves using LIGO.  In LIGO, extremely small changes in the path length between two arms of an interferometer are caused by a passing gravitational wave.  This change in path length manifests as a shift in phase of the light that travels down one arm relative to light that travels down the other.  It is just this phase shift that is detected and related to a change in distance.  Similar techniques are used on much smaller scales to stabilize fine movements in stages with nanometer precision.</p>
 <p>A limitation to the measurement of interferometric phase shifts is caused by noise in the system and at the optical readout.  Given we can make a stable enough interferometer, and obtain low enough noise in the detector readout, the measurement noise will eventually be limited by fundamental fluctuations in the photon signal.  In a classical interferometer, this fundamental photon noise results in a variance in the phase estimation of</p>
@@ -708,7 +513,7 @@ document.write(`
 <p>In this section we explore the use of NOON state interferometers for achieving noise performance beyond the SQL.  For further reading on this topic, please see Refs. <span id="id3">[<a class="reference internal" href="#id7" title="Tomohisa Nagata, Ryo Okamoto, Jeremy L. O'Brien, Keiji Sasaki, and Shigeki Takeuchi. Beating the Standard Quantum Limit with Four-Entangled Photons. Science, 316(5825):726–729, May 2007. Publisher: American Association for the Advancement of Science Section: Report. URL: https://science.sciencemag.org/content/316/5825/726 (visited on 2020-11-12), doi:10.1126/science.1138007.">NOOBrien+07</a>, <a class="reference internal" href="#id8" title="Ryo Okamoto, Holger F. Hofmann, Tomohisa Nagata, Jeremy L. O'Brien, Keiji Sasaki, and Shigeki Takeuchi. Beating the standard quantum limit: phase super-sensitivity of\$\less\$i\$\greater\$N\$\less\$/i\$\greater\$-photon interferometers. New Journal of Physics, 10(7):073033, July 2008. Publisher: IOP Publishing. URL: https://doi.org/10.1088/1367-2630/10/7/073033 (visited on 2022-08-05), doi:10.1088/1367-2630/10/7/073033.">OHN+08</a>]</span>.</p>
 <p>Consider a setup that builds on the HOM setup as shown in Fig. <a class="reference internal" href="#noon-state-interferometer"><span class="std std-numref">Fig. 12</span></a>.</p>
 <figure class="align-default" id="noon-state-interferometer">
-<a class="bg-primary mb-1 reference internal image-reference" href="https://drive.google.com/uc?export=view&amp;id=1D8Js9o1wj5yNmsOUZ_kYn-EG7h_l8T31"><img alt="NOON-state-interferometer" class="bg-primary mb-1" src="https://drive.google.com/uc?export=view&amp;id=1D8Js9o1wj5yNmsOUZ_kYn-EG7h_l8T31" style="width: 800px;" /></a>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://drive.google.com/uc?export=view&amp;id=1D8Js9o1wj5yNmsOUZ_kYn-EG7h_l8T31"><img alt="NOON-state-interferometer" class="bg-primary mb-1" src="https://drive.google.com/uc?export=view&amp;id=1D8Js9o1wj5yNmsOUZ_kYn-EG7h_l8T31" style="width: 800px;"/></a>
 <figcaption>
 <p><span class="caption-number">Fig. 12 </span><span class="caption-text">A <span class="math notranslate nohighlight">\(N=2\)</span> NOON state interferometer.</span><a class="headerlink" href="#noon-state-interferometer" title="Link to this image">#</a></p>
 </figcaption>
@@ -845,18 +650,18 @@ document.write(`
 <span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_cl</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">);</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Counts&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;1001 (Classical)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_cl</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">);</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Counts'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'1001 (Classical)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 
 <span class="n">ax2</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_2002</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">);</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;2002&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_2002</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">);</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'Time (s)'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'2002'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 
 <span class="n">ax3</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_4004</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">);</span>
-<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;4004&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">);</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">N_4004</span><span class="p">,</span> <span class="s1">'o'</span><span class="p">);</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'4004'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -866,12 +671,12 @@ document.write(`
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<img alt="_images/fd1fbf27fd243b99cc453a1b163680c0a87f4a825fe9789e6b5f8961a1de2261.png" src="_images/fd1fbf27fd243b99cc453a1b163680c0a87f4a825fe9789e6b5f8961a1de2261.png" />
+<img alt="_images/fd1fbf27fd243b99cc453a1b163680c0a87f4a825fe9789e6b5f8961a1de2261.png" src="_images/fd1fbf27fd243b99cc453a1b163680c0a87f4a825fe9789e6b5f8961a1de2261.png"/>
 </div>
 </details>
 </div>
 <figure class="align-default" id="fig-noon-classical-comparison" style="width: 800px">
-<img alt="_images/fd1fbf27fd243b99cc453a1b163680c0a87f4a825fe9789e6b5f8961a1de2261.png" src="_images/fd1fbf27fd243b99cc453a1b163680c0a87f4a825fe9789e6b5f8961a1de2261.png" />
+<img alt="_images/fd1fbf27fd243b99cc453a1b163680c0a87f4a825fe9789e6b5f8961a1de2261.png" src="_images/fd1fbf27fd243b99cc453a1b163680c0a87f4a825fe9789e6b5f8961a1de2261.png"/>
 <figcaption>
 <p><span class="caption-number">Fig. 13 </span><span class="caption-text">Comparison of classical and NOON state interferomters.  The plot shows the recorded number of counts (photon counts for the classical case, or multiphoton events in the NOON state cases) for a fixed number of 1000 photons input to each interferomter.  The phase is modulated sinusoidally in time with an amplitude of 0.05 radians and frequency of 4 Hz.  Note the improved noise performance of the NOON-state interferometers.  If you reduce the phase modulation amplitude, you will notice that the NOON state interferometers can resolve phase modulations of lower amplitude than the classical interferometer.</span><a class="headerlink" href="#fig-noon-classical-comparison" title="Link to this image">#</a></p>
 </figcaption>
@@ -893,31 +698,30 @@ document.write(`
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <div class="docutils container" id="id5">
-<div role="list" class="citation-list">
+<div class="citation-list" role="list">
 <div class="citation" id="id9" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">Bra17</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a href="#id2" role="doc-backlink">Bra17</a><span class="fn-bracket">]</span></span>
 <p>Agata M. Brańczyk. Hong-Ou-Mandel Interference. October 2017. arXiv:1711.00080 [quant-ph]. URL: <a class="reference external" href="http://arxiv.org/abs/1711.00080">http://arxiv.org/abs/1711.00080</a> (visited on 2022-07-04), <a class="reference external" href="https://doi.org/10.48550/arXiv.1711.00080">doi:10.48550/arXiv.1711.00080</a>.</p>
 </div>
 <div class="citation" id="id10" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">HOM87</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a href="#id1" role="doc-backlink">HOM87</a><span class="fn-bracket">]</span></span>
 <p>C. K. Hong, Z. Y. Ou, and L. Mandel. Measurement of subpicosecond time intervals between two photons by interference. <em>Physical Review Letters</em>, 59(18):2044–2046, November 1987. Publisher: American Physical Society. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevLett.59.2044">https://link.aps.org/doi/10.1103/PhysRevLett.59.2044</a> (visited on 2022-07-13), <a class="reference external" href="https://doi.org/10.1103/PhysRevLett.59.2044">doi:10.1103/PhysRevLett.59.2044</a>.</p>
 </div>
 <div class="citation" id="id7" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>NOOBrien+07<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id3">1</a>,<a role="doc-backlink" href="#id4">2</a>)</span>
+<span class="backrefs">(<a href="#id3" role="doc-backlink">1</a>,<a href="#id4" role="doc-backlink">2</a>)</span>
 <p>Tomohisa Nagata, Ryo Okamoto, Jeremy L. O'Brien, Keiji Sasaki, and Shigeki Takeuchi. Beating the Standard Quantum Limit with Four-Entangled Photons. <em>Science</em>, 316(5825):726–729, May 2007. Publisher: American Association for the Advancement of Science Section: Report. URL: <a class="reference external" href="https://science.sciencemag.org/content/316/5825/726">https://science.sciencemag.org/content/316/5825/726</a> (visited on 2020-11-12), <a class="reference external" href="https://doi.org/10.1126/science.1138007">doi:10.1126/science.1138007</a>.</p>
 </div>
 <div class="citation" id="id8" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>OHN+08<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id3">1</a>,<a role="doc-backlink" href="#id4">2</a>)</span>
+<span class="backrefs">(<a href="#id3" role="doc-backlink">1</a>,<a href="#id4" role="doc-backlink">2</a>)</span>
 <p>Ryo Okamoto, Holger F. Hofmann, Tomohisa Nagata, Jeremy L. O'Brien, Keiji Sasaki, and Shigeki Takeuchi. Beating the standard quantum limit: phase super-sensitivity of\$\less\$i\$\greater\$N\$\less\$/i\$\greater\$-photon interferometers. <em>New Journal of Physics</em>, 10(7):073033, July 2008. Publisher: IOP Publishing. URL: <a class="reference external" href="https://doi.org/10.1088/1367-2630/10/7/073033">https://doi.org/10.1088/1367-2630/10/7/073033</a> (visited on 2022-08-05), <a class="reference external" href="https://doi.org/10.1088/1367-2630/10/7/073033">doi:10.1088/1367-2630/10/7/073033</a>.</p>
 </div>
 </div>
 </div>
 </section>
 </section>
-
-    <script type="text/x-thebe-config">
+<script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
@@ -935,52 +739,34 @@ document.write(`
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
-
-                </article>
-              
-
-              
-              
-              
-              
-                <footer class="prev-next-footer">
-                  
+<script>kernelName = 'python3'</script>
+</article>
+<footer class="prev-next-footer">
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="BASICS-quantum-optics-basics.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">BASICS – Quantum Optics</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
+<a class="left-prev" href="BASICS-quantum-optics-basics.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">BASICS – Quantum Optics</p>
 </div>
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
+</a>
+<a class="right-next" href="T3E1-LAB--entanglement-interference-quantum-enhanced-sensing.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">LAB – Interference, Entanglement and Quantum-Enhanced Metrology</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entangled-photon-pair-generation-and-measurement">Entangled Photon Pair Generation and Measurement</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prelab-1-questions">Prelab 1 Questions</a></li>
 </ul>
@@ -1002,57 +788,36 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
-  </nav></div>
-
+</nav></div>
 </div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
+</div>
+<footer class="bd-footer-content">
 <div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
+<div class="footer-item">
 <p class="component-author">
 By Dirk Englund, Donnie Keathley, Jane Heyes, Kevin Chen
 </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-
-  <p class="copyright">
+</div>
+<div class="footer-item">
+<p class="copyright">
     
       © Copyright 2023.
       <br/>
-    
-  </p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
+</p>
 </div>
-          </footer>
-        
-
-      </main>
-    </div>
-  </div>
-  
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<div class="footer-item">
+</div>
+<div class="footer-item">
+</div>
+</div>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
 <script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
-
-  <footer class="bd-footer">
-  </footer>
-  </body>
+<footer class="bd-footer">
+</footer>
+<script src="_static/scripts/chattutor.config.js"></script><script src="_static/scripts/chattutor.min.js"></script></body>
 </html>
